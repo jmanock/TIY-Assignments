@@ -15,7 +15,8 @@
  */
 
 var add = function(a, b) {
-    if ( b === "zero"){
+    if (a == "one"){
+     if ( b === "zero"){
         return 1;
     }
     if ( b === "two"){
@@ -39,6 +40,7 @@ var add = function(a, b) {
     if ( b === "eight"){
         return 9;
     }
+    }
     return 2;
 }
 
@@ -59,5 +61,9 @@ console.log('it should add "one" and "six"',
 add("one", "six")==7);
 console.log('it should add "one" and "seven"',
 add("one", "seven")==8);
-console.log('it should add "one" adn "eight"',
+console.log('it should add "one" and "eight"',
 add("one", "eight")==9);
+console.log('it should add "one" and "nine"',
+add("one", "nine")==10);
+console.log('it should add "one" and "ten"',
+add("one", "ten") ==11);
