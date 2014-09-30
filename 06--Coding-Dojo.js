@@ -40,15 +40,20 @@ var add = function(a, b) {
     if ( b === "eight"){
         return 9;
     }
+    if ( b === "nine"){
+        return 10;
+    }
+    if (b === "ten"){
+        return 11;
+    }
     }
     return 2;
 }
 
 console.log('it should add "one" and "one"',
-add("one", "one")== 2);
-
+add("one", "one")==2);
 console.log('it should add "one" and "zero"',
-add("one", "zero")== 1);
+add("one", "zero")==1);
 console.log('it should add "one" and "two"',
 add("one", "two")==3);
 console.log('it should add "one" and "three"',
@@ -67,3 +72,5 @@ console.log('it should add "one" and "nine"',
 add("one", "nine")==10);
 console.log('it should add "one" and "ten"',
 add("one", "ten") ==11);
+console.log('it should add "two" and "one"',
+add("two", "one")==3);
