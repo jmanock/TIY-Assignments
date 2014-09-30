@@ -27,6 +27,18 @@ var add = function(a, b) {
     if ( b === "four"){
         return 5;
     }
+    if ( b === "five"){
+        return 6;
+    }
+    if ( b === "six"){
+        return 7;
+    }
+    if ( b === "seven"){
+        return 8;
+    }
+    if ( b === "eight"){
+        return 9;
+    }
     return 2;
 }
 
@@ -41,3 +53,11 @@ console.log('it should add "one" and "three"',
 add("one", "three")==4);
 console.log('it should add "one" and "four"',
 add("one", "four")== 5);
+console.log('it should add "one" and "five"',
+add("one", "five")==6);
+console.log('it should add "one" and "six"',
+add("one", "six")==7);
+console.log('it should add "one" and "seven"',
+add("one", "seven")==8);
+console.log('it should add "one" adn "eight"',
+add("one", "eight")==9);
