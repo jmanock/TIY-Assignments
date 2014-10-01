@@ -74,3 +74,7 @@ console.log('it should add "one" and "ten"',
 add("one", "ten") ==11);
 console.log('it should add "two" and "one"',
 add("two", "one")==3);
+
+
+var a = (10 * 3) / 2 + 3 * 6;
+console.log (a);
