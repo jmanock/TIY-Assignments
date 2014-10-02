@@ -28,7 +28,7 @@ var val = num.toString();
       if (num % 10 === 0){
         return tens[val[0]];
       }{
-        return ones[val[0]] + ' hundred and ' + tens[val[0]] + ones[val[0]];
+        return ones[val[0]] + ' hundred and ' + tens[val[1]] + ones[val[2]];
       }
     }
     // if (num < 1000){
@@ -47,7 +47,7 @@ console.log(numbersToWords(22));
 console.log(numbersToWords(30));
 console.log(numbersToWords(99));
 console.log(numbersToWords(101));
-
+console.log(numbersToWords(123));
 console.log('it should take 1 and return "one"',
 numbersToWords(1)==="one");
 
