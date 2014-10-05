@@ -14,18 +14,12 @@ var board = [
 ];
 
 var board1 = [
-  [false, false, false],
-  [true, true, true],
-  [false, false, false],
+  [true, false, false],
+  [false, true, false],
+  [false, false, true],
 ];
 
 var board2 = [
-  [false, false, false],
-  [false, false, false],
-  [false, false, false],
-];
-
-var board3 = [
   [true, true, true],
   [true, true, true],
   [true, true, true],
@@ -123,8 +117,9 @@ function tick(board){
   // Input: board
   // Output: newBoard
   var newBoard = new Array(3);
-  console.log(board);
   console.log('***************************')
+  console.log(board);
+  console.log('***************************');
   for (var i = 0; i<board.length; i++){
     newBoard[i] = new Array(3);
     for (var j = 0; j<board[i].length; j++){
@@ -138,10 +133,10 @@ function tick(board){
   return newBoard;
 }
 
- console.log(tick(board));
-// console.log(tick(board1));
-// console.log(tick(board2));
-// console.log(tick(board3));
+console.log(tick(board));
+console.log(tick(board1));
+console.log(tick(board2));
+
 
 // console.log(conway(board,0,0));
 // console.log(conway(board,0,1));
