@@ -110,9 +110,9 @@ function conway(board,x,y){
 function tick(board){
   // Input: Board Variable
   // Output: New Board passed threw Conway function
-  var newBoard = new Array(3);
+  var newBoard = new Array(board.length);
   for (var i = 0; i<board.length; i++){
-    newBoard[i] = new Array(3);
+    newBoard[i] = new Array(board[i].length);
     for (var j = 0; j<board[i].length; j++){
       newBoard[i][j]=conway(board,i,j);
     }
