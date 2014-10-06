@@ -1,12 +1,6 @@
 var assert = require('assert');
 
-function test(actual, expected, success){
-  if(success === undefined)
-    success = 'Winner';
-  assert.strictEqual(actual, expected);
-  console.log(success)
-}
-
+// Board Variables
 var board = [
  [false, true, false],
  [false, true, false],
@@ -114,29 +108,36 @@ function conway(board,x,y){
 }
 
 function tick(board){
-  // Input: board
-  // Output: newBoard
+  // Input: Board Variable
+  // Output: New Board passed threw Conway function
   var newBoard = new Array(3);
-  console.log('***************************')
-  console.log(board);
-  console.log('***************************');
   for (var i = 0; i<board.length; i++){
     newBoard[i] = new Array(3);
     for (var j = 0; j<board[i].length; j++){
-      newBoard[i][j]=conway(board,i,j)
-      // newBoard.push = ([i,j]);
-      // newBoard.push = ([i,j]);
-      // newBoard.push = ([i,j]);
-      // console.log(newBoard,[i,j]);
+      newBoard[i][j]=conway(board,i,j);
     }
   }
   return newBoard;
 }
 
-console.log(tick(board));
-console.log(tick(board1));
-console.log(tick(board2));
+function test(board){
+  // Input: Function Call
+  // Output: New Boards with style
+  var newTest = tick(board);
+  console.log('**************************');
+  console.log(board);
+  console.log('@@@@@@@@@@@@@@@@@@@@@@@@@');
+  console.log(newTest);
 
+}
+
+test(board);
+test(board2);
+test(board1);
+
+// console.log(tick(board));
+// console.log(tick(board1));
+// console.log(tick(board2));
 
 // console.log(conway(board,0,0));
 // console.log(conway(board,0,1));
