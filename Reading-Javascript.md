@@ -1,59 +1,68 @@
 ```javascript
-var self = this
+// Variable Storing a Function
+  name: Calculator
+  Value: Function
+  Operands:  ()
 ```
-Variable: `count`
-Value: `this`
-
+```javascript  
+// Variable
+  Name: self
+  Value: this
+  Symbol: =
+  Keyword: this
+```
+```javascript  
+// Variable storing a Function
+  Name: number
+  Value: function
+  Operands: ( )
+  Value: item and event
+  Symbol: =
+  Keyword: self
+```
+```javascript  
+// if statment
+  Name: isShowingResult
+  Value: none
+  Operands: ( )
+  Keyword: self
+```
+```javascript  
+// if statment
+  Name: button
+  Value: equals to decimalMark and display
+  Symbol: ==
+  Keywords: self
+```
+```javascript  
+// Variable storing a Function
+  Name: negate
+  Value: function
+  Operands: ( )
+  Symbol: =
+  Keyword: self
+```
+```javascript  
+// Variable storing a Function
+  Name: backspace
+  Value: function
+  Operands: ( )
+  Symbol: =
+  Keyword: self
+```
 ```javascript
-var decimalMark = .
+// Variable storing a Function
+  Name: clearDisplay
+  Value: function
+  Operands: ( )
+  Symbol: =
+  Keyword: self
 ```
-Variable: `decimalMark`
-Value: `.`
-
 ```javascript
-(button == decimalMark && self.display().indexOf(decimalMark) > -1)
+// Variable storing a function
+  Name: keycallback
+  Value: function
+  Parameter: e
+  Operands: ( )
+  Keyword: var
 ```
-Operations: `==`, `&&`, `>`
-Variable: `decimalMark` and `self.display().indexof(decimalMark)` greater that `-1`
-
-```javascript
-var sum = 0
-```
-Variable: `sum`
-Value: 0
-
-```javascript
-var a = this
-```
-Variable: `a`
-Value: `this`
-
-```javascript
-  a.display = ko.observable("0");
-```
-Operations: `=`
-Variable: 'a.display' gets ko.observable
-
-```javascript
-var b = this
-```
-Variable: `b`
-Value: `this`
-
-```javascript
- b += parseFloat(a.display(), 10);
-```
-Operations: `+=`
-Variable:` b` += parseFloat(a.display(), 10)
-
-```javascript
-b *= parseFloat(a.display(), 10);
-```
-Operations: `*=`
-Variable: `b` += parseFloat(a.display(), 10)
-
-```javascript
-b /= parseFloat(a.display(), 10);
-```
-Operations: `/=`
-Variable: `b` /= parseFloat(a.display(),10)
