@@ -69,62 +69,36 @@ var neighbors;
 
 }
 
-function conway(board,x,y){
+function conway(cell,neighbors){
   // Input: Cell
   // Output: Neighbors and cell with rules applied
-  var livingCell = 0;
-  var neighbors = neighborsOf(board,x,y);
-  var newCell;
-  var status = board[x][y];
-
-    neighbors.forEach(function(value, index)){
-//  for(var i = 0; i < neighbors.length; i++){
-    if(value === true){
-      livingCell++;
-    }
-  }
-    if (status === true){
-      // Rule #1
-      if (livingCell < 2) {
-        newCell = false;
-      }
-      // Rule #2
-      if (livingCell === 2 || livingCell === 3) {
-        newCell = true;
-      }
-      // Rule #3
-      if (livingCell > 3){
-        newCell = false;
-      }
-      // Rule #4
-      } else {
-        if (livingCell === 3){
-          newCell = true;
-        } else {
-          newCell = false;
-        }
-      }
-       return newCell;
-
+  var alive = 0;
+alive = neighbors.filter(function(neighbor){
+  return neighbor;
 });
-
-function tick(board){
-  // Input: Board Variable
-  // Output: New Board passed threw Conway function
-  var newBoard = new Array(board.length);
-  for (var i = 0; i<board.length; i++){
-    newBoard[i] = new Array(board[i].length);
-    for (var j = 0; j<board[i].length; j++){
-      newBoard[i][j]=conway(board,i,j);
-    }
+  if(cell && alive ===2 ){
+    return true;
   }
-  return newBoard;
+  if(alive === 3){
+    return true;
+  }
+  return false;
 }
 
+function tick(before){
+  // Input: Board Variable
+  // Output: New Board passed threw Conway function
+var after = board();
+before.forEach(function(fow,x){
+  row.forEach(function(cell,x,y){
+    console.log(cell,row,x,y);
+    });
+  });
+}
 function test(board){
   // Input: Function Call
   // Output: New Boards with style
-  var newTest = tick(board);
+  var newTest = tick(before);
   console.log('**************************');
   console.log(board);
   console.log('@@@@@@@@@@@@@@@@@@@@@@@@@');
@@ -132,9 +106,10 @@ function test(board){
 
 }
 
-console.log(conway(board,0,0));
 
-// test(board);
+
+
+ test(board);
 // test(board2);
 // test(board1);
 
