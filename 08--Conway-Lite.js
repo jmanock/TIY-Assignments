@@ -77,8 +77,9 @@ function conway(board,x,y){
   var newCell;
   var status = board[x][y];
 
-  for(var i = 0; i < neighbors.length; i++){
-    if(neighbors[i] === true){
+    neighbors.forEach(function(value, index)){
+//  for(var i = 0; i < neighbors.length; i++){
+    if(value === true){
       livingCell++;
     }
   }
@@ -105,7 +106,7 @@ function conway(board,x,y){
       }
        return newCell;
 
-}
+});
 
 function tick(board){
   // Input: Board Variable
@@ -131,9 +132,11 @@ function test(board){
 
 }
 
-test(board);
-test(board2);
-test(board1);
+console.log(conway(board,0,0));
+
+// test(board);
+// test(board2);
+// test(board1);
 
 // console.log(tick(board));
 // console.log(tick(board1));
