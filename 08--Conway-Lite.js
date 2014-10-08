@@ -72,33 +72,54 @@ var neighbors;
 function conway(cell,neighbors){
   // Input: Cell
   // Output: Neighbors and cell with rules applied
-  var alive = 0;
-alive = neighbors.filter(function(neighbor){
-  return neighbor;
-});
-  if(cell && alive ===2 ){
-    return true;
-  }
-  if(alive === 3){
-    return true;
-  }
-  return false;
+  var livingCell = 0;
+  neighbors.forEach(function(value,index){
+    if (value){
+      livingCell++;
+    }
+    // Rule #1
+    if (cell){
+      if (livingCell < 2){
+        newCell = false;
+      }
+      // Rule #2
+      if(livingCell === 2 || livingCell === 3){
+        newCell = true;
+      }
+      // Rule #3
+      if(livingCell > 3){
+        newCell = false;
+      }
+      // Rule #4
+    } else {
+      if (livingCell === 3){
+        newCell = true;
+      } else {
+        newCell = false;
+      }
+    }
+  });
+  return newCell;
 }
 
-function tick(before){
+function tick(board){
   // Input: Board Variable
   // Output: New Board passed threw Conway function
-var after = board();
-before.forEach(function(fow,x){
-  row.forEach(function(cell,x,y){
-    console.log(cell,row,x,y);
+  var newBoard = [];
+  board.forEach(function(value, index){
+    value.forEach(function(i,j){
+      newBoard.push(conway(board[index][j], neighborsOf(board, index, j)));
     });
   });
+  var row1 = newBoard.splice(0,3);
+  var row2 = newBoard.splice(0,3);
+  board = [row1, row2, newBoard];
+  return board;
 }
 function test(board){
   // Input: Function Call
   // Output: New Boards with style
-  var newTest = tick(before);
+  var newTest = tick(board);
   console.log('**************************');
   console.log(board);
   console.log('@@@@@@@@@@@@@@@@@@@@@@@@@');
@@ -109,10 +130,12 @@ function test(board){
 
 
 
- test(board);
-// test(board2);
-// test(board1);
+console.log('working?');
 
+
+ // test(board2);
+ // test(board1);
+ test(board);
 // console.log(tick(board));
 // console.log(tick(board1));
 // console.log(tick(board2));
