@@ -6,12 +6,15 @@
 copies the sequence of array elements within the array to the position starting at the target.
 ```javascript
 arr.copyWithin(target, start[, end = this.length])
+[1,2,3,4,5].copyWithin(0,3)
+// [4,5,3,4,5]
 ```
 
 ### Array.prototype.fill()
 fills all the elements of an array from a start to an end index with a static value.
 ```javascript
 arr.fill(value[, start = 0[, end = this.length]])
+[1, 2, 3].fill(4) // [4, 4, 4]
 ```
 
 ### Array.prototype.pop
@@ -35,7 +38,7 @@ x === [1,2,3,4,5,6];
 ### Array.prototype.reverse()
 reverses the order of an array ie first becomes last and last becomes first.
 ```javascript
-arr.revers()
+arr.reverse()
 var x = [1,2,3,4,5,6];
 x.reverse() //6,5,4,3,2,1
 x === [6,5,4,3,2,1];
@@ -59,7 +62,7 @@ x.sort() // 1-5
 x === [1,2,3,4,5];
 ```
 
-### Array.prototyp.splice()
+### Array.prototype.splice()
 changes the content of an array adding new elements and removing old elements.
 ```javascript
 array.splice(index, howMany[, element1[, ...[, elementN]]]) array.splice(index)
