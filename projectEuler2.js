@@ -25,34 +25,94 @@
 // Refactored Solution
 
 function Solution(){
-  var fibo = [ ];
-  var fiboEvens = [ ];
-  var sum = 0;
   return {
-    fibonacci: function(limit, prev, curr){
-      for(curr = curr; curr < limit; curr = prev + curr){
-        prev = curr - prev;
-        fibo.push(curr);
+    solveFor: function(limit){
+      return this.sum(this.filterEvens(this.fibonacci(limit)));
+    },
+    fibonacci: function(limit){
+      var sequence = [1,2];
+      var prev = 1, curr = 2, temp;
+      if(limit < 3){
+        return [ ];
       }
-      return fibo;
+      while (prev + curr < limit){
+        temp = prev + curr;
+        prev = curr;
+        curr = temp;
+        sequence.push(temp)
+      }
+      return sequence;
     },
-    filterEvens: function(fibo){
-      fibo.forEach(function(value, index){
-        if(value % 2 === 0){
-          fiboEvens.push(value)
-        }
+    filterEvens: function(list){
+      return list.filter(function(item){
+        return (item % 2 === 0);
       });
-      return fiboEvens;
     },
-    sum: function(fiboEvens){
-      fiboEvens.forEach(function(value, index){
-        sum += value;
-      });
-      return sum;
+    sum: function(list){
+      var total = 0;
+      return list.reduce(prev, item){
+        total += item;
+      }
+      return total;
     }
   }
 } // End Solution
 
-console.log(Solution().fibonacci(4000000,1,2));
-console.log(Solution().filterEvens(Solution().fibonacci(4000000,1,2)));
-console.log(Solution().sum(Solution().filterEvens(Solution().fibonacci(4000000,1,2))));
+// Test Solutions
+var assert = require('chai').assert
+describe('Project Euler #2', function(){
+  var S;
+  beforeEach(function){
+    S = solution();
+  }
+  it('should have a function for doing this', function(){
+    assert.isFunction(S.fibonacci);
+    assert.deepEqual(S.fibonacci(0), [ ]);
+  });
+  it('should calculate fibonacci numbers for a small sample', function(){
+    assert.deepEqual(S.fibonacci(5), [1,2,3]);
+    assert.deepEqual(S.fibonacci(10), [1,2,3,45,8]);
+    assert.deepEqual(S.fibonacci(20), [1,2,3,5,8,13]);
+    assert.deepEqual(S.fibonacci(40), [1,2,3,5,8,13,21,34]);
+  });
+  describe('filterEvens', function(){
+    it('should have a function for doing this', function(){
+      assert.isFunction(S.filterEvens);
+      assert.deepEqual(S.filterEvens([ ]), [ ]);
+    });
+    it('should filter out evens', function(){
+      assert.deepEqual(S.filterEvens([1]), [ ]);
+      assert.deepEqual(S.filterEvens([2]), [2]);
+      assert.deepEqual(S.filterEvens([1,2]),[2]);
+      assert.deepEqual(S.filterEvens([1,2,3]),[2]);
+    });
+  });
+  describe('sum values in a list', function(){
+    it('should have a function for doing this',function(){
+      assert.isFunction(S.sum);
+      assert.equal(S.sum([ ]), 0);
+    });
+    it('should sum items', function(){
+      assert.equal(S.sum([1]), 1);
+      assert.equal(S.sum([2]), 2);
+      assert.equal(S.sum([1,1]), 2);
+      assert.equal(S.sum([1,2]), 3);
+    });
+  });
+  describe('solveFor', function(){
+    it('should have a function for doing this', function(){
+      assert.isFunction(S.solveFor);
+    });
+    it('should beable to solve simple examples', function(){
+      assert.equal(S.solveFor(0), 0);
+      assert.equal(S.solveFor(3), 2);
+      assert.equal(S.solveFor(5), 2);
+      assert.equal(S.solveFor(15), 10);
+    });
+    it('should calculate the final answer', function(){
+      console.time('4m');
+      console.timeEnd(S.solveFor(4.0e6));
+      console.timeEnd('4m');
+    });
+  });
+});
