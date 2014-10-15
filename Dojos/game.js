@@ -21,6 +21,7 @@ function Game(){
    if(this.board[x][y] === true){
      return true;
    }
+   return false;
  }
 /**
  *Make the cell at {x,y} "alive", whatever that means
@@ -30,7 +31,7 @@ function Game(){
  *@return undefined
  */
  Game.prototype.setAlive = function(x,y){
-    this.board[x][y] = true;
+    this.board[x][y] = false;
  }
 /**
  *Make the cell at {x,y} "dead", whatever that means
@@ -51,15 +52,17 @@ Game.prototype.tick = function(){
 //Apply `rules` to each cell in the current board...
 // Record the result of `rules` in the new board...
 // Update the current board to match the new board...
-var boardNewTick = [ ];
-  this.board.forEach(function(value, index){
-    value.forEach(function(x,y){
-      boardNewTick.push(this.rules(this.board[index][y], neighborsOf(this.board,index,y)))
-    });
-  });
+var newBoard = board();
+for(var i = 0; i < newBoard.length; i++){
+  for(var j = 0; j < newBoard[i].length; j++){
+    newBoard.push(this.rules(i,j,this.board));
+  };
+};
+  newBoard.splice(0,3);
+
   var row1 = boardNewTick.splice(0,3);
   var row2 = boardNewTick.splice(0,3);
-  this.board = [row1, row2, boardNewTest];
+  this.board = [row1, row2, newBoard];
   return this.board;
 }
 
@@ -101,31 +104,28 @@ Game.prototype.neighborsOf = function(x,y){ neighbors = [];
 /**
  * What goes here?
  */
-Game.prototype.rules = function(cell, neighbors){
-  var liveN = 0
-  neighborsAre.forEach(function(value, index){
-    if (value === true){
-      liveN++;
-    }
-    if(position === false){
-      if(liveN === 3){
-        newState = true;
+Game.prototype.rules = function(x, y){
+  var cell = this.board[x][y],
+  liveCell = this.neighborsOf(x,y);
+
+    if (cell){
+      if(liveCell< 2){
+      newCell = false;
+      }
+      if(liveCell === 2 || liveCell === 3){
+        newCell = true;
+      }
+      if(liveCell > 3){
+        newCell = false;
+      }
+    } else{
+      if(liveCell === 3){
+        newCell = true;
       }else{
-        newState = false;
+        newCell = false;
       }
     }
-    if(position === true){
-      if(liveN < 2){
-        newState = false;
-      }
-      if(liveN > 3){
-        newState = false;
-      }
-      if(liveN === 2 || liveN === 3){
-        newState = true;
-      }
-    }
-  });
+    return newCell;
 }
 /**
  * WARNING: This is Vodoo Magic
