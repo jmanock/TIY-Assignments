@@ -266,3 +266,8 @@ var num = [11,29,2013].reduce(function(a,b){
 });
 console.log(num) //6.3102448275
 ```
+### Generic Methods
+Array-like objects ex argument and strings and do not inherit from Array.prototype
+```javascript
+var a ={'0':'a', '1':'b', '2':'c', length:3};
+Array.prototype.join.call(a,'+')// a+b+c
