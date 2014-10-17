@@ -1,3 +1,5 @@
+//var expect = require('chai').expect;
+var assert = require("assert");
 var game = {
   board: undefined,
   newBoard: function(){  },
@@ -27,53 +29,31 @@ var game = {
     }
   });
   },
-  neighborsOf: function(x,y){ neighbors = [];
-    if(x === 0 && y === 0){
-      neighbors = [board[1][1], board[0][1], board[1][0]];
-    }
-    if(x === 1 && y === 0){
-      neighbors = [board[1][1], board[0][0], board[0][1], board[2][0],
-      board[2][1]];
-    }
-    if(x === 2 && y === 0){
-      neighbors = [board[1][1], board[1][0], board[2][1]];
-    }
-    if(x === 1 && y === 1){
-      neighbors = [board[0][0], board[1][0], board[2][0], board[0][1],
-      board[0][2], board[2][1], board[2][2], board[][]];
-    }
-    if(x === 1 && y === 2){
-      neighbors = [board[1][1], board[0][1], board[0][2], board[2][1],
-      board[2][2]];
-    }
-    if(x === 2 && y === 1){
-      neighbors = [board[1][1], board[2][0], board[1][0], board[1][2],
-      board[0][2]];
-    }
-    if(x === 2 && y === 2){
-      neighbors = [board[1][1], board[2][1], board[1][2]];
-    }
-    if(x === 0 && y === 1){
-      neighbors = [board[1][1], board[0][0], board[1][0], board[0][2],
-      board[1][2]];
-    }
-    if(x === 0 && y === 2){
-      neighbors = [board[1][1], board[0][1], board[1][2]];
-    }
+  neighborsOf: function(x,y){
+    var diffs = [-1, 0, 1],
+    neighbors = [ ];
+    diffs.forEach(function(dX){
+      diffs.forEach(function(dY){
+        if(this.board.length === 0)return;
+        if(dX === 0 && dY === 0) return;
+        if(((x + dX) < 0) || ((y + dY) > 2)) return;
+        if(((y + dY) < 0) || ((y + dY) > 2)) return;
+        neighbors.push(this.board[x + dX] [y + dY]);
+      });
+    });
     return neighbors;
     },
-  tick: function(){ var boardNewTick = [];
-  board.forEach(function(value, index){
-    value.forEach(function(x,y){
-      boardNewTick.push(conway(board[index][y], neighborsOf(board,index, y)));
+  tick: function(){
+    var after = this.board;
+  this.board.forEach(function(row, x){
+    row.forEach(function(cell,y){
+      after[x][y] = game.rules(cell, game.neighborsOf(x,y));
     });
   });
-  var row1 = boardNewTick.splice(0,3);
-  var row2 = boardNewTick.splice(0,3);
-  board = [row1, row2, boardNewTest];
-  return board},
+    return after;
+  },
   display: function(){
-    var spacer: '+------+-----+----\n';
+    var spacer = '+------+-----+----\n';
 
     return spacer +
     // Apply 'renderRow' to each 'row' in boad
@@ -87,3 +67,18 @@ var game = {
     + spacer;
   } // End display
 }; // End game;
+
+// describe('Functions are in fact functions', function(){
+//   it('should have a function named newBoard', function(){
+//     assert(game.newBoard);
+//     assert(game.rules);
+//     assert(game.neighborsOf);
+//     assert(game.tick);
+//   });
+// });
+// describe('rules function works', function(){
+//   it('should ', function(){
+//     assert.equal(game.rules(true),[true,true,true])
+//   });
+// });
+console.log(game.display(game.tick(game.newBoard)));
