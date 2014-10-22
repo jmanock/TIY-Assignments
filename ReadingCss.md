@@ -1,7 +1,7 @@
 background-color
   sets the background color of an element, either through a color value or the keyword transparent  [https://developer.mozilla.org/en-US/docs/Web/CSS/background-color]
 border-color
-  is a shorthand for setting the color of the four sides of an elemets boarder
+  is a shorthand for setting the color of the four sides of an elements boarder
     https://developer.mozilla.org/en-US/docs/Web/CSS/border-color
 color
   sets the foreground color of an elements text content, and its decorations

@@ -48,3 +48,24 @@
     http://orlando.theironyard.com/
     https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article
     http://motherfuckingwebsite.com/
+<span>
+  provides a way to add a hook to part of a text or a part of a document
+
+<strong>
+  defines important text
+<b>
+  bold text
+<i>
+  italic text
+<em>
+  renders as emphasized text
+<a>
+  difines a hyperlink
+<strike>
+  defines strikethrough text
+<samp>
+  defines sample output from a computer program 
+<code>
+  defines a piece of computer code
+<br>
+  inserts a single line break
