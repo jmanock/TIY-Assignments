@@ -37,3 +37,31 @@
 ```border-left-color```
   sets the color of the bottom border of an element
   https://developer.mozilla.org/en-US/docs/Web/CSS/border-left-color
+border-right-color
+  sets the color of the right border of an element  https://developer.mozilla.org/en-US/docs/Web/CSS/border-right-color
+border-right
+  shorthand that sets the values of border-right-color, border-right-style, and border-right-width
+    https://developer.mozilla.org/en-US/docs/Web/CSS/border-right
+border-top
+  shorthand that sets the values of border-top-color, border-top-style, and border-top-width
+    https://developer.mozilla.org/en-US/docs/Web/CSS/border-top
+border-top-color
+  sets the color of the top border of an element
+  https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-color
+border-bottom
+  shorthand that sets the values of border-bottom-color, border-bottom-style, and border-bottom-width
+  https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom
+border-bottom-color
+  sets the color of the bottom of an element  https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-color
+font
+  shorthand property for setting font-style, font-variant, font-weight, font-size, line-height, and font-family
+    https://developer.mozilla.org/en-US/docs/Web/CSS/font
+font-family
+  allows for a prioritized list of font family names and/or generic family names to be specified fo the selected element
+    https://developer.mozilla.org/en-US/docs/Web/CSS/font-family
+font-style
+  allows italic or oblique faces to be selected within a font-family
+    https://developer.mozilla.org/en-US/docs/Web/CSS/font-style
+font-weight
+  specifies the weight of boldness of the font
+    https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight
