@@ -101,3 +101,37 @@
 [Code School](https://www.codeschool.com)
 ```<video width="300" height="150" src="your-video.mov"></video>```
 [Awwwards](http://www.awwwards.com/20-html5-video-websites-examples-and-resources.html)
+# Inline Elements
+## 11
+```<br>```
+```p><strong>First Day of School!</strong><br/>```
+[The Iron Yard](http://orlando.theironyard.com)
+```<br />With Breach Notices<br />```
+[Yahoo](http://www.yahoo.com)
+
+## 12
+```<span>```
+```<span class="event-link ell">```
+[Yahoo](http://www.yahoo.com)
+```<span>training the highest-quality developers in the world,```
+[The Iron Yard](http://orlando.theironyard.com)
+
+## 13
+```<b>```
+```<b class='srt'>Twitter</b>```
+[Code School](https://www.codeschool.com)
+
+## 14
+```<i>```
+## 15
+```<code>```
+## 16
+```<em>```
+## 17
+```<map>```
+## 18
+```<button>```
+## 19
+```<script>```
+## 20
+```<input>```
