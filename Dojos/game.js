@@ -162,3 +162,8 @@ Game.prototype.rules = function(x, y){
         }).join(spacer) // Place `spacer` between each `row`...
     + spacer;
 } // END display
+
+
+piece.toString = function(){
+  if(this.name === 'Queen')
+}
