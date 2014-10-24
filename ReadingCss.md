@@ -1,42 +1,42 @@
 # 1
 ```background-color```
-  sets the background color of an element, either through a color value or the keyword transparent  https://developer.mozilla.org/en-US/docs/Web/CSS/background-color
+  sets the background color of an element, either through a color value or the keyword transparent  [Mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/border)
 # 2
 ```border-color```
   is a shorthand for setting the color of the four sides of an elements boarder
-    https://developer.mozilla.org/en-US/docs/Web/CSS/border-color
+[Mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/border)
 # 3
 ```color```
   sets the foreground color of an elements text content, and its decorations
-    https://developer.mozilla.org/en-US/docs/Web/CSS/color
+[Mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/border)
 # 4
 ```background-image```
   drawing an image on the borders of elements
-    https://developer.mozilla.org/en-US/docs/Web/CSS/border-image
+[Mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/border)
 # 5
 ```background-size```
   specifies the size of the background images
-    https://developer.mozilla.org/en-US/docs/Web/CSS/background-size
+[Mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/border)
 # 6
 ```blur()```
   applies a Gaussian blur to the input image
-    https://developer.mozilla.org/en-US/docs/Web/CSS/filter#blur
+[Mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/border)
 # 7
 ```border```
   shorthand property for setting the individual border property value in a single place in the style sheet
-    https://developer.mozilla.org/en-US/docs/Web/CSS/border
+[Mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/border)
 # 8
 ```border-bottom```
   shorthand that sets the values of border-bottom-color, border-bottom-style, and border-bottom-width
-    https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom
+[Mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/border)
 # 9
 ```border-left```
   shorthand that sets the values of border-left-color, border-left-style, and border-left-width.
-    https://developer.mozilla.org/en-US/docs/Web/CSS/border-left
+[Mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/border)
 #10
 ```border-left-color```
   sets the color of the bottom border of an element
-  https://developer.mozilla.org/en-US/docs/Web/CSS/border-left-color
+[Mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/border)
 border-right-color
   sets the color of the right border of an element  https://developer.mozilla.org/en-US/docs/Web/CSS/border-right-color
 border-right
