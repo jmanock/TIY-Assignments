@@ -69,43 +69,74 @@
   sets the color of the bottom border of an element
 ```border-left-color: currentColor```
 [Mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/border)
+``` border-left-color: #ff0000```
+[W3 Schools](http://www.w3schools.com/cssref/pr_border-left_color.asp)
 #11
 ```border-right-color```
-  sets the color of the right border of an element  [Mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/border-right-color)
+  sets the color of the right border of an element
+```border-right-color: currentColor``` [Mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/border-right-color)
+```border-right-color: #ff0000```
+[W3 Schools](http://www.w3schools.com/cssref/pr_border-right_color.asp)
 #12
 ```border-right```
   shorthand that sets the values of border-right-color,
 border-right-style, and border-right-width
 ```border-right-color: currentColor```
 [Mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/border-right)
+``` border-right: thick double #ff0000;```
+[W3 School](http://www.w3schools.com/cssref/pr_border-right.asp)
 #13
 ```border-top```
   shorthand that sets the values of border-top-color, border-top-style, and border-top-width
+```border-top-width: medium```
 [Mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/border-top)
+```border-top: thick double #ff0000;```
+[W3 School](http://www.w3schools.com/cssref/pr_border-top.asp)
 #14
 ```border-top-color```
   sets the color of the top border of an element
+``` border-top-color: #ff0000```
+[W3 School]
+```border-top-color: currentColor```
 [Mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-color)
 #15
 ```border-bottom```
   shorthand that sets the values of border-bottom-color, border-bottom-style, and border-bottom-width
+```border-bottom: thick dotted #ff0000;```
+[W3 School](http://www.w3schools.com/cssref/pr_border-bottom.asp)
+```border-bottom: thick green;```
 [Mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom)
 #16
 ```border-bottom-color```
-  sets the color of the bottom of an element  [Mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-color)
+  sets the color of the bottom of an element
+  ```border-bottom-color: currentColor``` [Mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-color)
+```border-bottom-color: #ff0000;```
+[W3 School](http://www.w3schools.com/cssref/pr_border-bottom_color.asp)
 #17
 ```font```
   shorthand property for setting font-style, font-variant, font-weight, font-size, line-height, and font-family
+```font-style: normal```
 [Mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/font)
+```font: "Times New Roman", Times, serif;```
+[W3 School](http://www.w3schools.com/css/css_font.asp)
 #18
 ```font-family```
   allows for a prioritized list of font family names and/or generic family names to be specified fo the selected element
+```font-family: as specified```
 [Mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family)
+```font-family: "Times New Roman", Times, serif;```
+[W3 School](http://www.w3schools.com/css/css_font.asp)
 #19
 ```font-style```
   allows italic or oblique faces to be selected within a font-family
+```font-style: no```
 [Mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/font-style)
+```font-style: normal;```
+[W3 School](http://www.w3schools.com/css/css_font.asp)
 #20
 ```font-weight```
   specifies the weight of boldness of the font
+```font-weight: normal```
 [Mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight)
+```font-weight: normal;```
+[W3 School](http://www.w3schools.com/cssref/pr_font_weight.asp)
