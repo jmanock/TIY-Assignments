@@ -3,13 +3,20 @@
 <head>
   <title>Horizontal Menu</title>
   <style>
-
+  a:hover{
+	  color:gray;
+	  text-decoration:none;
+  }
   nav li{
     display:inline;
   }
+  a{
+	  text-decoration:none;
+	  color:black;
+  }
   section{
     outline:1px solid red;
-    background:yellow;
+    background:green;
   }
   section h1{
     margin:0;
@@ -17,21 +24,41 @@
   .tabs ul{
     margin:0;
   }
-
+  </style>
+  <script type='text/javascript'>
+  function showMenu(id){
+	  var arrMenus = ['products', 'downloads', 'applications', 'projects', 'freeware'];
+	  var thisMenu = document.getElementById(id);
+	  if(thisMenu.style.display === 'block'){
+		  thisMenu.style.display = 'none';
+	  }else{
+	  	  arrMenus.forEach(function(value,index){
+			  var thisTab = value + 'Tab';
+			  if(value==id){
+				  thisMenu.style.display = 'block';
+				  document.getElementById(thisTab).style.backgroundColor = '#ababab'
+			  } else{
+				  document.getElementById(value).style.display = 'none';
+				  document.getElementById(thisTab).style.backgroundColor = '#fff';
+			  }
+	  	  });
+	  }
+  }
+  </script>
 </head>
 <body>
 <h2>BLUEPRINT</h2>
 <h1>Horizontal Drop-Down Menu</h1>
   <nav>
     <ul>
-      <li>Products</li>
-      <li>Downloads</li>
-      <li>Applications</li>
-      <li>Projections</li>
-      <li>Freeway</li>
-    </ul>
+		<li><a id='productsTab' href='#' onclick="showMenu('products');">Products</a></li>
+		<li><a id='downloadsTab' href='#' onclick="showMenu('downloads');">Downloads</a></li>
+		<li><a id='applicationsTab' href='#' onclick="showMenu('applications');">Applications</a></li>
+		<li><a id='projectsTab' href='#' onclick="showMenu('projects');">Projects</a></li>
+		<li><a id='freewareTab' href='#' onclick="showMenu('freeware');">Freeware</a></li>
   </nav>
-  <section id='Products'>
+
+  <section id='products' style='display:none'>
   <h1>Learning & Games</h1>
   <ul>
     <li>Catch the Bullet</li>
@@ -62,7 +89,8 @@
     <li>Moneymaker</li>
   </ul>
   </section>
-  <section id='downloads'>
+
+  <section id='downloads' style='display:none'>
   <h1>Education & Learning</h1>
   <ul>
     <li>Learn Thai</li>
@@ -93,7 +121,7 @@
     <li>Moneymaker</li>
   </ul>
   </section>
-  <section id='applications'>
+  <section id='applications' style='display:none'>
   <h1>Education & Learning</h1>
   <ul>
     <li>Learn Thai</li>
@@ -124,7 +152,7 @@
     <li>Moneymaker</li>
   </ul>
   </section>
-  <section id='projects'>
+  <section id='projects' style='display:none'>
   <h1>Learning & Games</h1>
   <ul>
     <li>Catch the Bullet</li>
@@ -147,7 +175,7 @@
     <li>Green Tree Express</li>
   </ul>
   </section>
-  <section id='Freeware'>
+  <section id='freeware' style='display:none'>
   <h1>Utilities</h1>
   <ul>
     <li>Green Tree Pro</li>
@@ -175,3 +203,5 @@
     <li>Chemokid</li>
   </ul>
   </section>
+</body>
+</html>
