@@ -1,116 +1,124 @@
 <html>
 <head>
 	<title> Vertical Timeline</title>
+	 <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	<style>
-	section{
-		margin-left:300px;
-		margin-right:100px;
+	.timelineEven{
+		margin-top:15px;
+		margin-bottom:15px;
+		margin-left:25%;
+		margin-right:5%;
+		border-radius:5px;
+		background-color:gray;
+		padding:30px;
+	}
+	.timelineEven h2{
+		color:skyblue;
+	}
+	.timelineEven hr{
+		color:orange;
+		border:1px solid;
+	}
+	.timelineOdd{
+		margin-top:0;
+		margin-bottom:0;
+		margin-left:25%;
+		margin-right:5%;
+		border-radius:5px;
+		border-radius:5px;
+		background-color:green;
+		padding:30px;
+	}
+	.timelineOdd h2{
+		color:skyblue;
+	}
+	.timelineOdd hr{
+		color:orange;
+		border:1px solid;
+	}
+	body{
+		margin:0;
+	}
+	ul{
+		list-style-type:none;
+	}
+	.arrowEven{
+		margin-top:-39px;
+		margin-left:-45px;
+		color:gray;
+	}
+	.arrowOdd{
+		margin-top:-39px;
+		margin-left:-45px;
+		color:green;
+	}
+	aside a{
+		margin-left:120px;
+		position:absolute;
+		background-color:gray;
+		height:45px;
+		width:45px;
+		display:block;
+		border:9px green solid;
+		border-radius:50%;
+	}
+	.date{
+		margin-left:75px;
+		position:absolute;
 		background-color:gray;
 	}
-	section p{
-		margin-left:50px;
-		margin-top:30px;
-		margin-right:30px;
-		margin-bottom:30px;
+	.time{
+		background-color:orange;
+		margin-left:75px;
+		position:relative;
 	}
-	section h1{
-		margin-top:-50px;
-		margin-left:50px;
-		margin-bottom:-5px;
+	article{
+	  width: 65%;
+	  /*outline: magenta 1px solid;*/
+	  position: relative;
+	  border-left: 12px lightblue solid;
+	  float: right;
+	  margin-right: 3em;
 	}
-	section hr{
-		margin-left:50px;
-		margin-right:30px;
-	}
-	.date, .time{
-		background-color:none;
-		margin-left:-200px;
-	}
-	.verticalLine{
-		border-left: 10px solid green;
-		margin-left: -100px;
-		background-color:none;
 
-	}
 	</style>
 </head>
 <body>
 	<h2>BluePrint</h2>
 	<h1>Vertical Timeline</h1>
-
-	<section class='even'>
-		<h5 class='date'>4/10/13</h5>
-		<h2 class='time'>18:30</h2>
-		<div class='verticalLine'>
-			<h1>Lollipop topping lemon drops icing gummies jelly beans lollipop caramels.</h1>
+	<ul>
+		<aside class='phone'>
+			<p><date class='date'>4/10/13</date></p>
+			<p><time class='time'>18:30</time></p>
+		</aside>
+		<li class='timelineEven'>
+			<p class='arrowEven'><span class="fa fa-caret-left fa-3x"></span></p>
+			<h2>Lollipop topping lemon drops icing gummies jelly 	beans lollipop caramels.</h2>
 			<hr>
 			<p>YHalvah candy toffee pastry soufflé carrot cake bonbon gummies. Jelly-o biscuit apple pie soufflé gummies macaroon. Tootsie roll toffee cupcake. Sesame snaps brownie tootsie roll pastry sesame snaps caramels marzipan. Biscuit sweet roll cotton candy applicake. Candy canes cake halvah candy soufflé. Jujubes apple pie marzipan chocolate ice cream brownie toffee. Dragée jelly lollipop gingerbread tiramisu lollipop. Cheesecake gummies tiramisu bonbon dragée applicake tart fruitcake apple pie. </p>
-		</div>
-	</section>
+		</li>
 
-
-	<section class='odd'>
-		<h5 class='date'>4/11/13</h5>
-		<h2 class='time'>12:04</h2>
-		<div class='verticalLine'>
-			<h1> Lemon drops danish toffee chupa chups liquorice.</h1>
+			<aside class='comp'>
+				<p><date class='date'>4/12/13</date></p>
+				<p><time class='time'>20:45</time></p>
+			</aside>
+		<li class='timelineOdd'>
+			<p class='arrowOdd'><span class="fa fa-caret-left fa-3x"></span></p>
+			<h2> Lemon drops danish toffee chupa chups liquorice.</h2>
 			<hr>
 			<p>Croissant tootsie roll chocolate lollipop. Soufflé carrot cake pudding. Apple pie powder wafer candy sugar plum. Tiramisu biscuit chupa chups pastry tart. Cheesecake chocolate bar chocolate bar gummies soufflé icing gummi bears apple pie halvah. Jujubes macaroon caramels pie dragée chocolate cake apple pie wafer jelly-o. Jujubes chocolate cheesecake jujubes dessert marzipan. Pie candy gummies candy cake sweet roll marzipan danish macaroon. Jelly beans topping cupcake macaroon apple pie. Tiramisu cookie bonbon dragée jelly-o donut muffin gingerbread gummies.</p>
-		</div>
-	</section>
+		</li>
 
-
-	<section class='even'>
-		<h5 class='date'>4/13/13</h5>
-		<h2 class='time'>05:36</h2>
-		<div class='verticalLine'>
-			<h1>Fruitcake croissant chocolate cake tart cake jelly-o. </h1>
-			<hr>
-			<p>Croissant cotton candy sweet roll marzipan. Jujubes pudding donut gummi bears. Chocolate bar bonbon dessert dessert. Fruitcake macaroon pie candy jelly-o bonbon. Muffin cupcake cheesecake candy jelly-o gummi bears. Fruitcake cheesecake carrot cake candy.</p>
-		</div>
-	</section>
-
-
-	<section class='odd'>
-		<h5 class='date'>4/15/13</h5>
-		<h2 class='time'>13:15</h2>
-		<div class='verticalLine'>
-			<h1>Sesame snaps biscuit marzipan sesame snaps sweet.</h1>
-			<hr>
-			<p>Chocolate cake chupa chups dragée icing. Cake pie tiramisu fruitcake pastry danish dragée toffee. Tiramisu cupcake dragée chocolate cake marshmallow jelly-o lemon drops. Danish dragée bear claw danish bonbon tootsie roll soufflé. Jujubes tootsie roll gummi bears. Cupcake chocolate bar muffin jelly-o biscuit bear claw cotton candy.</p>
-		</div>
-	</section>
-
-	<section class='even'>
-		<h5 class='date'>4/16/13</h5>
-		<h2 class='time'>21:30</h2>
-		<div class='verticalLine'>
-			<h1>Ice cream caramels cheesecake jujubes carrot cake.</h1>
+		<aside class='hand'>
+			<p><date class='date'>4/10/13</date></p>
+			<p><time class='time'>19:22</time><p>
+		</aside>
+		<li class='timelineEven'>
+			<p class='arrowEven'><span class="fa fa-caret-left fa-3x"></span></p>
+			<h2>Ice cream caramels cheesecake jujubes carrot cake.</h2>
 			<hr>
 			<p>Sweet roll cotton candy sesame snaps macaroon sweet sweet jelly beans gummi bears jelly. Cookie bonbon pie. Halvah wafer donut bonbon muffin jelly. Sesame snaps soufflé sweet roll candy canes fruitcake chupa chups lemon drops. Candy wafer chocolate bar muffin candy canes jelly powder chupa chups. Cotton candy cake oat cake toffee donut danish. Chocolate donut ice cream croissant apple pie lemon drops halvah lollipop cheesecake. Candy lollipop jelly beans jelly-o muffin. Cupcake apple pie cheesecake pudding.</p>
-			</div>
-	</section>
-
-
-	<section class='odd'>
-		<h5 class='date'>4/17/13</h5>
-		<h2 class='time'>12:11</h2>
-		<div class='verticalLine'>
-			<h1>Jujubes biscuit cookie cheesecake caramels. </h1>
-			<hr>
-			<p>Chocolate dessert sweet liquorice applicake jelly-o cotton candy powder. Cotton candy pie fruitcake pudding soufflé. Dessert sesame snaps cotton candy muffin croissant marzipan sugar plum. Chocolate cake cookie chocolate bar sugar plum lollipop cookie. Oat cake tootsie roll chocolate croissant sweet roll wafer bonbon donut sweet. Apple pie cotton candy sesame snaps jelly beans chocolate bar cheesecake sesame snaps. Toffee sweet roll chocolate cake liquorice pastry. Jelly danish icing bear claw icing dessert.</p>
-		</div>
-	</section>
-
-	<section class='even'>
-		<h5 class='date'>4/18/13</h5>
-		<h2 class='time'>09:56</h2>
-		<div class='verticalLine'>
-			<h1>Cheesecake sugar plum tart.</h1>
-			<hr>
-			<p>Chocolate dessert sweet liquorice applicake jelly-o cotton candy powder. Cotton candy pie fruitcake pudding soufflé. Dessert sesame snaps cotton candy muffin croissant marzipan sugar plum. Chocolate cake cookie chocolate bar sugar plum lollipop cookie. Oat cake tootsie roll chocolate croissant sweet roll wafer bonbon donut sweet. Apple pie cotton candy sesame snaps jelly beans chocolate bar cheesecake sesame snaps. Toffee sweet roll chocolate cake liquorice pastry. Jelly danish icing bear claw icing dessert.</p>
-		</div>
-	</section>
+		</li>
+	</ul>
 </body>
 </html>
-		
