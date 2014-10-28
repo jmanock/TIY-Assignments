@@ -1,3 +1,4 @@
+/* Stolen directly from the Blueprint... */
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 
 /**
@@ -114,6 +115,7 @@ body {
 @media (max-width: 768px) {
     .timeline {
         border: none;
+		margin-left:-4em;
     }
     .timeline > li:before {
         position: static;
@@ -122,8 +124,15 @@ body {
     .timeline > li time {
         position: static;
         float: left;
+		padding-bottom:17px;
     }
     .timeline > li article {
         clear: both;
     }
+	.timeline > li article:after{
+		content:'\25B2';
+		top:3.5em;
+		left:2em;
+	}
+
 }
