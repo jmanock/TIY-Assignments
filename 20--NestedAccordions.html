@@ -1,96 +1,66 @@
 <html>
 <head>
-	<title>Nested Accordions </title>
-	<script type='text/javascript'>
-	function visibility(id){
-		var e = document.getElementById(id);
-			if(e.style.display === 'none'){
-				e.style.display = 'block';
-			}else{
-				if(e.style.display === 'block'){
-					e.style.display = 'none';
-				}
-			}
-	}
-	</script>
+	<link rel='stylesheet' href='node_modules/normalize.css/normalize.css'>
+	<link rel='stylesheet' href='nested-accordions.css'>
 </head>
 <body>
-	<h2>BLUEPRINT</h2>
-	<h1>Nested Acordion</h1>
-	<ul>
-		<li><a href='#' onclick="visibility('oat');">Oat cake tootsie roll</a></li>
-		<article id='oat' style='display:none'>
-			<hr>
-			<p>Jelly sweet roll dragée gummies. Jelly-o cotton candy gingerbread. Dessert tart bear claw gummi bears I love oat cake cotton candy sesame snaps carrot cake. Croissant marshmallow tiramisu icing soufflé chocolate cake. I love pie icing. Sweet I love sweet roll cheesecake dessert. Tiramisu gingerbread I love. Muffin chocolate cake powder cheesecake oat cake tootsie roll candy soufflé. Brownie toffee powder tiramisu. Wafer I love jujubes croissant. Chocolate cake candy jujubes tootsie roll bonbon toffee I love. Topping candy jelly-o. Halvah faworki I love I love toffee pastry icing chupa chups. Pie gingerbread candy canes oat cake.</p>
-				<ul>
-					<li><a href='#' onclick="visibility('donut');">Donut Pastry</a></li>
-					<p id='donut' style='display:none'>Gingerbread cotton candy halvah gingerbread. Apple pie wypas liquorice I love chocolate cake I love. Jelly cotton candy wypas lemon drops. Dragée tiramisu cheesecake biscuit sesame snaps carrot cake jelly beans pastry apple pie. Chocolate cake cotton candy candy canes brownie ice cream. Muffin chocolate cake jelly-o cake pudding. Jujubes I love cookie. I love cupcake I love bear claw sweet croissant. Wypas bonbon chocolate cake bonbon bear claw gummies. Liquorice danish jelly tootsie roll. I love danish icing lemon drops dessert pie jujubes. Fruitcake wafer I love biscuit. Donut pastry apple pie sugar plum soufflé ice cream tart bonbon candy.</p>
-					<li><a href='#' onclick="visibility('carrot');">Carrot Cake</a></li>
-					<p id='carrot' style='display:none'>Wafer muffin cupcake apple pie tootsie roll I love. Carrot cake apple pie I love dessert. I love carrot cake lollipop jelly jelly-o brownie cake. Croissant brownie donut gingerbread dessert icing. Sugar plum jelly candy pudding liquorice liquorice cotton candy pie. Powder sesame snaps I love chocolate bar bonbon. Pudding gummi bears donut applicake carrot cake I love I love icing cake.</p>
-					<li><a href='#' onclick="visibility('tootsie');">Tootsie Roll Marshmallow</a></li>
-					<p id='tootsie' style='display:none'>I love tootsie roll marshmallow. Halvah jelly bear claw lemon drops lollipop. Brownie tiramisu I love I love halvah wafer. Powder jelly beans sesame snaps. Powder biscuit I love wypas soufflé apple pie marzipan. Cheesecake apple pie halvah croissant jelly I love.</p>
-				</ul>
-			</article>
-			<li><a href='#' onclick="visibility('cream');">Cream gummi bears</a></li>
-			<article id='cream' style='display:none'>
-				<hr>
-				<p>Cotton candy chocolate cake macaroon applicake I love. Tart soufflé I love powder. I love tiramisu lollipop pie. Pudding gummi bears sweet. Candy chocolate I love jujubes pie donut. Apple pie sesame snaps caramels tootsie roll macaroon caramels croissant I love. Sweet roll chocolate lemon drops. I love I love muffin gummi bears I love cotton candy.</p>
-				<ul>
-					<li><a href='#' onclick="visibility('cookie');">Cookie ice cream</a></li>
-					<p id='cookie' style='display:none'>Liquorice jelly-o oat cake gingerbread chocolate caramels chupa chups muffin candy. I love dessert biscuit halvah lemon drops. Macaroon sweet roll marzipan cookie I love lollipop I love wafer lollipop. Caramels candy pudding brownie. Oat cake cake gingerbread bear claw croissant dessert. Lemon drops oat cake sugar plum wypas cupcake fruitcake liquorice. Muffin wafer tootsie roll caramels. I love brownie powder icing marzipan dragée. Pie fruitcake soufflé sweet roll faworki candy canes I love. Jelly-o carrot cake donut cheesecake.</p>
-					<li><a href='#' onclick="visibility('biscuit');">Biscuit Chupa Chups Tart</a></li>
-					<p id='biscuit' style='display:none'>Sweet muffin fruitcake. Marshmallow dessert gummies dragée. Dragée pudding caramels toffee I love I love. Pie candy canes soufflé candy jelly-o marshmallow marshmallow. Biscuit danish jelly beans lollipop sweet sesame snaps oat cake. I love chupa chups cake ice cream ice cream applicake tart. Dessert muffin chocolate bar.</p>
-					<li><a href='#' onclick="visibility('chocolate');">Chocolate Tart Macaroon</a></li>
-					<p id='chocolate' style='display:none'>Faworki oat cake cotton candy cookie ice cream gummi bears. Ice cream bear claw icing macaroon apple pie caramels. Sugar plum applicake candy canes sesame snaps I love. Sugar plum brownie biscuit tiramisu marzipan. Ice cream I love sweet bear claw I love sweet cake tart. Danish marshmallow I love wypas pastry. Chocolate tart macaroon wypas sesame snaps apple pie chocolate sesame snaps. Cotton candy sweet roll pudding oat cake I love marzipan wafer chocolate cake.</p>
-					<li><a href='#' onclick="visibility('lollipop');">Lollipop Liquorice</a></li>
-					<p id='lollipop' style='display:none'>Cookie ice cream sweet I love cupcake. Fruitcake topping wafer. Lollipop liquorice I love tart wypas biscuit. Danish jelly-o gingerbread. Faworki jelly pastry. Wypas wypas topping I love I love candy canes liquorice. I love sweet roll fruitcake dragée wafer icing bonbon.</p>
-				</ul>
-			</article>
-			<li><a href='#' onclick="visibility('jelly');">Jelly marzipan sugar plum</a></li>
-			<article id='jelly' style='display:none'>
-				<hr>
-					<p>Jujubes bonbon oat cake. Cookie cookie liquorice bear claw pudding jelly-o. Sugar plum oat cake cookie. Sweet pudding tiramisu. Donut bear claw marshmallow tootsie roll I love lollipop icing. Candy chocolate bar biscuit cake tart candy donut. Carrot cake tiramisu carrot cake I love chocolate cake cake pastry carrot cake faworki. Jujubes marzipan carrot cake lemon drops dragée cake fruitcake macaroon dessert. Cotton candy I love icing powder. Gummies marzipan biscuit I love I love pudding.</p>
-					<ul>
-						<li><a href='#' onclick="visibility('toffee');">Toffee Souffle Chocolate Bar</a></li>
-						<p id='toffee' style='display:none'>Carrot cake chocolate cake cupcake pudding chocolate sweet. Dragée liquorice macaroon cookie dragée jelly beans. I love liquorice applicake cheesecake. I love jelly marzipan sugar plum bonbon. Pastry chupa chups pie jelly candy canes. Donut carrot cake ice cream pudding halvah jelly cupcake. Danish candy canes topping.</p>
-						<li><a href='#' onclick="visibility('subtitle');">Subtitle</a></li>
-						<p id='subtitle' style='display:none'>Dragée chocolate cake cake. Marshmallow toffee chocolate cake. Dessert bear claw dessert candy canes lollipop I love cheesecake dragée muffin. Oat cake cupcake chocolate cotton candy. Danish sweet oat cake. Cookie bear claw bear claw bear claw wypas candy canes icing. Candy canes powder toffee soufflé chocolate bar macaroon. Soufflé I love brownie cookie I love chupa chups. Pastry pudding icing.</p>
-						<li><a href='#' onclick="visibility('pie');">Pie Wafer Brownie</a></li>
-						<p id='pie' style='display:none'>Macaroon I love faworki halvah lollipop croissant chocolate cake lemon drops cheesecake. Croissant cookie halvah tiramisu powder tootsie roll applicake lemon drops. Ice cream jelly powder I love candy canes biscuit gingerbread jelly I love. Sugar plum marshmallow marzipan bear claw cookie. Jelly-o I love cake danish I love. Wypas donut dessert. I love carrot cake oat cake I love I love lollipop donut. Pie wafer brownie. Cake toffee marshmallow I love I love jelly-o.</p>
-					</ul>
-				</article>
-			<li><a href='#' onclick="visibility('danish');">Danish souffle</a></li>
-		<article id='danish' style='display:none'>
-			<hr>
-			<p>Lemon drops ice cream I love danish soufflé cake jelly cupcake. Bear claw I love I love tart I love liquorice bear claw. Halvah chocolate gummi bears jelly-o jelly-o lollipop lemon drops liquorice. Candy canes tiramisu candy faworki apple pie. Chocolate jujubes sesame snaps ice cream cupcake. Halvah topping chupa chups biscuit. I love I love chupa chups tootsie roll marshmallow tart gummi bears chocolate.</p>
-			<ul>
-				<li><a href='#' onclick="visibility('biscuitBear');">Biscuit Bear Claw Bear Claw</a></li>
-				<p id='biscuitBear' style='display:none'>Halvah I love jelly beans. Danish I love jelly beans sweet roll tart biscuit. Lemon drops wypas toffee candy canes lemon drops dragée. Sweet roll I love bonbon I love. Liquorice chocolate bar lollipop faworki lollipop sugar plum. Soufflé croissant lemon drops cotton candy. Jelly candy canes cupcake halvah macaroon.</p>
-				<li><a href='#' onclick="visibility('jujubesBear');">Jujubes Bear Claw Topping Applecake</a></li>
-				<p id='jujubesBear' style='display:none'>Pastry ice cream pie marshmallow muffin gingerbread. Bonbon wafer sweet roll candy lollipop. Sugar plum jujubes sweet roll donut gummi bears chupa chups ice cream. Icing I love apple pie lemon drops faworki sugar plum sweet roll. Marshmallow liquorice cotton candy jujubes chocolate bar fruitcake topping carrot cake. Chocolate croissant cupcake macaroon pastry gummi bears jelly beans. Oat cake bear claw lollipop chocolate cake. Ice cream danish faworki dragée I love chupa chups cotton candy I love. Cookie gummi bears oat cake faworki powder. Wypas jelly bonbon tiramisu apple pie jelly beans.</p>
-			</ul>
-		</article>
-			<li><a href='#' onclick="visibility('jujubes');">Jujubes bear claw topping</a></li>
-		</ul>
-		<article id='jujubes' style='display:none'>
-			<hr>
-			<p>Cotton candy chocolate cake macaroon applicake I love. Tart soufflé I love powder. I love tiramisu lollipop pie. Pudding gummi bears sweet. Candy chocolate I love jujubes pie donut. Apple pie sesame snaps caramels tootsie roll macaroon caramels croissant I love. Sweet roll chocolate lemon drops. I love I love muffin gummi bears I love cotton candy.</p>
-			<ul>
-				<li><a href='#' onclick="visibility('faworki');">Faworki Jelly Pastry</a></li>
-				<p id='faworki' style='display:none'>Liquorice jelly-o oat cake gingerbread chocolate caramels chupa chups muffin candy. I love dessert biscuit halvah lemon drops. Macaroon sweet roll marzipan cookie I love lollipop I love wafer lollipop. Caramels candy pudding brownie. Oat cake cake gingerbread bear claw croissant dessert. Lemon drops oat cake sugar plum wypas cupcake fruitcake liquorice. Muffin wafer tootsie roll caramels. I love brownie powder icing marzipan dragée. Pie fruitcake soufflé sweet roll faworki candy canes I love. Jelly-o carrot cake donut cheesecake.</p>
-				<ul style='display:none'>
-					<li><a href='#' onclick="visibility('donutPastry');">Donut Pastry</a></li>
-					<p id='donutPastry' style='display:none'>Gingerbread cotton candy halvah gingerbread. Apple pie wypas liquorice I love chocolate cake I love. Jelly cotton candy wypas lemon drops. Dragée tiramisu cheesecake biscuit sesame snaps carrot cake jelly beans pastry apple pie. Chocolate cake cotton candy candy canes brownie ice cream. Muffin chocolate cake jelly-o cake pudding. Jujubes I love cookie. I love cupcake I love bear claw sweet croissant. Wypas bonbon chocolate cake bonbon bear claw gummies. Liquorice danish jelly tootsie roll. I love danish icing lemon drops dessert pie jujubes. Fruitcake wafer I love biscuit. Donut pastry apple pie sugar plum soufflé ice cream tart bonbon candy.</p>
-					<li><a href='#' onclick="visibility('carrotCake');">Carrot Cake</a></li>
-					<p id='carrotCake' style='display:none'>Wafer muffin cupcake apple pie tootsie roll I love. Carrot cake apple pie I love dessert. I love carrot cake lollipop jelly jelly-o brownie cake. Croissant brownie donut gingerbread dessert icing. Sugar plum jelly candy pudding liquorice liquorice cotton candy pie. Powder sesame snaps I love chocolate bar bonbon. Pudding gummi bears donut applicake carrot cake I love I love icing cake.</p>
-					<li><a href='#' onclick="visibility('tootsieRoll');">Tootsie Rool Marshmallow</a></li>
-					<p id='tootsieRoll' style='display:none'>I love tootsie roll marshmallow. Halvah jelly bear claw lemon drops lollipop. Brownie tiramisu I love I love halvah wafer. Powder jelly beans sesame snaps. Powder biscuit I love wypas soufflé apple pie marzipan. Cheesecake apple pie halvah croissant jelly I love.</p>
-				</ul>
-				<li><a href='#' onclick="visibility('carmels');">Chocolate Caramels</a></li>
-				<p id='carmels' style="display:none">Faworki oat cake cotton candy cookie ice cream gummi bears. Ice cream bear claw icing macaroon apple pie caramels. Sugar plum applicake candy canes sesame snaps I love. Sugar plum brownie biscuit tiramisu marzipan. Ice cream I love sweet bear claw I love sweet cake tart. Danish marshmallow I love wypas pastry. Chocolate tart macaroon wypas sesame snaps apple pie chocolate sesame snaps. Cotton candy sweet roll pudding oat cake I love marzipan wafer chocolate cake.</p>
-				<li><a href='#' onclick="visibility('liquorice');">Lollipop Liquorice</a></li>
-				<p id='liquorice' style='display:none'>Cookie ice cream sweet I love cupcake. Fruitcake topping wafer. Lollipop liquorice I love tart wypas biscuit. Danish jelly-o gingerbread. Faworki jelly pastry. Wypas wypas topping I love I love candy canes liquorice. I love sweet roll fruitcake dragée wafer icing bonbon.</p>
-			</ul>
-		</article>
+	<ul class='accordion'>
+		<li>
+			<h3>Episode I: The Phantom Menace</h3>
+			<p>  Lucas ipsum dolor sit amet coruscant luuke luke maul kit calamari skywalker organa biggs moff. Wedge darth gonk grievous mandalore. Organa hutt tatooine antilles. Grievous calamari aayla moff hoth qui-gon. Mustafar windu sith sebulba. Organa luke antilles palpatine antilles. Amidala moff r2-d2 sidious darth mustafar windu. Jabba lars ponda endor. Skywalker naboo mace binks. R2-d2 mandalore mace mara obi-wan leia. Lobot leia boba bespin kenobi gonk k-3po darth skywalker. Moff antilles maul dagobah.
+      </p>
+	  <ul>
+		  <li class='accordion-open'>
+			  <h4>Act 1: Above Naboo</h4>
+			  <p>Gingerbread Bothan gonk grievous mara antilles bothan yavin. Mandalorians jinn darth luuke. Twi'lek han hutt antilles zabrak. Jabba qui-gonn dantooine yoda ackbar wedge sith. Kashyyyk k-3po jinn mandalorians bespin hutt kessel. Luke chewbacca c-3p0 mara mara thrawn utapau. Mace mara luuke ben. Anakin darth lars moff. Ben darth moff lando jinn. Moff dooku palpatine vader lars darth. Wicket ahsoka wampa calrissian jango sidious. Ackbar kamino skywalker lando luke moff. Calamari ackbar darth windu cade padmé twi'lek darth maul.</p>
+		  </li><!-- end Act 1-->
+		  <li>
+			  <h4>Act 2: Marooned on Tatooine</h4>
+			  <p>Wafer muffin Mon vader secura fett organa hutt. Greedo boba boba organa mace ackbar. Hutt utapau skywalker solo coruscant. Organa calrissian luke sidious palpatine thrawn organa ben. Bothan naboo kessel obi-wan. Skywalker qui-gonn darth leia jade qui-gon fisto chewbacca hutt. Hutt solo leia leia secura ben moff skywalker. Yoda amidala mon yavin jango. Owen r2-d2 calamari organa leia. Ponda calamari jawa c-3po windu calamari darth r2-d2 ben. Dantooine luke greedo qui-gon lando qui-gon maul luke moff. Palpatine skywalker anakin owen secura ben leia lobot binks.</p>
+		  </li> <!-- end Act 2-->
+		  <li>
+			  <h4>Act 3: Battle on Naboo</h4>
+			  <p>Coruscant c-3p0 gamorrean zabrak. Watto yavin moff organa ventress mon skywalker vader. Organa skywalker fett grievous mustafar. Jawa yavin anakin tatooine. Mustafar yoda naboo maul gonk ahsoka. Solo hutt hutt mon qui-gonn darth fett ahsoka kessel. Luke vader calamari lando. C-3po darth hutt greedo. Sidious c-3po luuke tatooine organa. Ackbar skywalker qui-gon mace obi-wan. Fett mace mothma padmé wookiee boba. Watto windu grievous boba fett anakin r2-d2 leia hutt. Ahsoka binks jango mara skywalker luke luuke gamorrean moff.</p>
+		  </li> <!-- end Act 3-->
+	  </ul>
+  </li><!-- end Episode I-->
+  <li>
+	  <h3>Episode II: Attack of the Clones</h3>
+	  <p>Darth coruscant dagobah lando calrissian. Sidious darth jabba mandalore maul solo darth biggs. Naboo gonk skywalker hutt darth zabrak. Luke darth lando twi'lek jawa mara yavin maul mara. Organa darth ackbar mon c-3po fett antilles. Jade ben darth fett secura amidala antilles. Bespin owen ventress maul obi-wan dagobah anakin. Skywalker hutt alderaan wicket yavin kashyyyk. Twi'lek moff solo k-3po jinn lars. Mustafar darth lando sebulba mustafar aayla moff owen. Kessel anakin endor jinn lobot calamari darth skywalker.</p>
+  </li>
+  <li>
+	  <h4>Act 2: Kamino</h4>
+	  <p>Rattataki quermian ranat keyan aparo wesell mantell zekk jabiimas. Organa su kessel briqualon dalonbian omwati. Wicket dagobah quinlan hapes soontir anakin gordin yevetha. Tarasin oola dantooine aleena lah. Onimi grizmallt lytton gwurran yoda hutt ka jabba. Tatooine elom theelin saffa antilles mustafarian. Organa biggs -lom cornelius kalee yavin orus lars. Noa sal-solo stele ventress frozarns lorth mayagil natasi. Fel jusik rhen omas daala yuuzhan himoran. Rodian jodo ansionian frozarns. Ahsoka lahara fel ulic.</p>
+  </li>
+  <li>
+	  <h4>Act 3: Genosis</h4>
+	  <p>Stele givin poggle antilles. Choka abregado juvex rugor wampa. Iv jade hutt gen'dai raymus ord roonan. Evocii celegian yaka c-3po golda warrick sio. Sing fode kel boba antilles terrik. Sarn noghri r2-d2 woostoid zev. Gamorrean rom sly moff daala. Sulorine calamari chadra-fan watto ablajeck ortolan. Dalonbian r4-p17 besalisk rune. Mon kast hallotan yané utai kamino. Tion nute lars dash coway c-3po fett omwati dantari. Ysanne walon hutt wat haruun subterrel. Wedge su mace feeorin. Fosh selonian klivian joh.</p>
+  </li>
+  <li>
+	  <h4>Epilogue: Naboo</h4>
+	  <p>Windu obi-wan fett darth calrissian. Anakin solo kessel wedge darth mon solo skywalker ponda. Skywalker twi'lek lobot greedo hutt boba gonk. Solo twi'lek alderaan darth mara dantooine. Solo leia jinn skywalker zabrak solo jinn wedge moff. Coruscant darth kessel moff leia. Gamorrean yavin kenobi cade hutt moff skywalker endor. Antilles moff kessel ackbar. Skywalker fett obi-wan antilles wedge moff moff qui-gonn dooku. Ahsoka leia darth jinn. Leia bespin k-3po vader amidala jinn skywalker moff. Mon calamari organa mon darth obi-wan mon organa darth.</p>
+  </li>
+</ul>
+</li>
+</ul>
+
+<script>
+function attachOnclickTo(tagName){
+	var elements = document.getElementsByTagName(tagName);
+
+	for(var index = 0; index < elements.length; index++){
+		elements[index].onclick = function(event){
+			toggleOpenClass(this.parentElement);
+		}
+	}
+}
+attachOnclickTo('h3');
+attachOnclickTo('h4');
+</script>
 </body>
 </html>
+
+
+
+
+		
