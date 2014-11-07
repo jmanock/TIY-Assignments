@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <html>
   tells the browser that this is an html document
     http://orlando.theironyard.com/
@@ -105,6 +106,20 @@ specifies a header for a document or section
 ## 2
 ```<html>```
 tells the browser this is an html document
+=======
+# Block-level tags
+## 1
+```<header>```
+  ```<header class="extVidPlayerHeader">```
+[The New York Times](www.nytimes.com)
+```<header style="background-image:url(http://static.tumblr.com/3c7cd96cde56779343d2e9a22afec085/w5gxxfv/oCrn8vkw8/tumblr_static_9cxjqqnfamsccsg4ow84sg8kg.jpg);"></header><div class="content-wrap clearfix has-header-image" id="page-wrap">```
+[The Iron Yard](http://orlando.theironyard.com/)
+```<header class='header row has-dropdown ovh ovv--m'>```
+[Code School](https://www.codeschool.com/)
+
+## 2
+```<html>```
+>>>>>>> 19--Build-a-Blog
 ```<html lang="en" class="no-js edition-domestic app-homepage"  itemscope xmlns:og="http://opengraphprotocol.org/schema/">```
 [The New York Times](www.nytimes.com)
 ```<html class="no-js">```
@@ -113,7 +128,10 @@ tells the browser this is an html document
 [Code School](https://www.codeschool.com/)
 ## 3
 ```<article>```
+<<<<<<< HEAD
 self contained content
+=======
+>>>>>>> 19--Build-a-Blog
   ```<article class="post type-text" id="100189034319"><div class="clearfix rte">```
     [TIY Blog](http://orlando.theironyard.com/)
   ```   <article class="story theme-summary" data-story-id="100000003189532" data-rank="2" data-collection-renderstyle="Moth">
@@ -129,7 +147,10 @@ self contained content
 
 ## 4
 ```<footer>```
+<<<<<<< HEAD
 footer for nearest section content
+=======
+>>>>>>> 19--Build-a-Blog
   ```<footer id="page-footer" class="page-footer" role="contentinfo">```
 [The New York Times](www.nytimes.com)
 ```<footer class='footer'>```
@@ -140,7 +161,10 @@ footer for nearest section content
 [The Iron Yard](http://orlando.theironyard.com/)
 ## 5
 ```<li>```
+<<<<<<< HEAD
 list item
+=======
+>>>>>>> 19--Build-a-Blog
   ```<li>
                 <a href="http://www.nytimes.com/content/help/rights/copyright/copyright-notice.html" itemprop="copyrightNotice">
                     &copy; <span itemprop="copyrightYear">2014</span><span itemprop="copyrightHolder provider sourceOrganization" itemscope itemtype="http://schema.org/Organization" itemid="http://www.nytimes.com"><span itemprop="name"> The New York Times Company</span><meta itemprop="tickerSymbol" content="NYSE NYT"/></span>
@@ -154,7 +178,10 @@ list item
 
 ## 6
 ```<h1>```
+<<<<<<< HEAD
 top heading
+=======
+>>>>>>> 19--Build-a-Blog
 ``` <h1 class="title">```
 [The Iron Yard](http://orlando.theironyard.com)
 ```<h1 > <a href="http://hsrd.yahoo.com/_ylt=AueMH0pY298G5oYD_jExYCSbvZx4/RV=1/RE=1415243521/RH=aHNyZC55YWhvby5jb20-/RO=2/RU=aHR0cHM6Ly93d3cueWFob28uY29tLw--/RS=^ADA3J_dKtFQPzJM4OfwvNsdRuApAp0-" id="yucs-logo-ani" class="y-logo-new ml-xs ti">Yahoo</a> ```
@@ -165,7 +192,10 @@ top heading
 
 ## 7
 ```<p>```
+<<<<<<< HEAD
 paragraph
+=======
+>>>>>>> 19--Build-a-Blog
 ```<p class="promoapp-msg fz-xxs">An endless stream of personalized news</p>```
 [Yahoo](https://www.yahoo.com)
 ```<p><em>By Sarah Elbadri, Campus Director</em></p>```
@@ -174,7 +204,10 @@ paragraph
 [Code School](https://www.codeschool.com)
 ## 8
 ```<form>```
+<<<<<<< HEAD
 create an Html form for user input
+=======
+>>>>>>> 19--Build-a-Blog
   ```<form role="search" name="sf1" method="get" id="p_13838465-searchform" class="search-form" action="https://search.yahoo.com/search;_ylt=Al1EzzbTo6.wMaPWKuewCoqbvZx4" target="_top">```
 [Yahoo](https://www.yahoo.com)
 ```<form action="/search" class="module search-form" method="get">```
@@ -184,7 +217,10 @@ create an Html form for user input
 
 ## 9
 ```<section>```
+<<<<<<< HEAD
 sections in a document chapters, headers, footers any sections in a document.
+=======
+>>>>>>> 19--Build-a-Blog
   ```<section id="top-news" class="top-news">```
 [The New York Times](www.nytimes.com)
 ```<section>
@@ -197,7 +233,10 @@ sections in a document chapters, headers, footers any sections in a document.
 
 ## 10
 ```<video>```
+<<<<<<< HEAD
 specifies a video
+=======
+>>>>>>> 19--Build-a-Blog
 ``` <video class="video-preview" width="300" height="120" loop preload="none">```
 [Yahoo](https://celebrity.yahoo.com/blogs/celeb-news/billy-bob-thornton-tells-the-uncut-story-of-angelina-jolie-and-those-blood-vials-143539855.html)
 ```<video class='mxp-videoplay-introvideo sublime' data-player-kit='3' data-settings='autoresize:fit' height='360' poster='https://d1tijy5l7mg5kk.cloudfront.net/assets/poster-gregg-7b56cd72b5f8d74bf5a097faaa2a1f10.jpg' preload='none' width='640'>```
@@ -207,6 +246,7 @@ specifies a video
 # Inline Elements
 ## 11
 ```<br>```
+<<<<<<< HEAD
 line break
 ```p><strong>First Day of School!</strong><br/>```
 [The Iron Yard](http://orlando.theironyard.com)
@@ -301,3 +341,23 @@ specifies an input field where users can input data
 ```><input type="text" name="q" placeholder="search" tabindex="20">```
 [Reddit](http://www.reddit.com/)
 >>>>>>> 18--Make-it-Hot
+=======
+## 12
+```<span>```
+## 13
+```<b>```
+## 14
+```<i>```
+## 15
+```<code>```
+## 16
+```<em>```
+## 17
+```<map>```
+## 18
+```<button>```
+## 19
+```<script>```
+## 20
+```<input>```
+>>>>>>> 19--Build-a-Blog
