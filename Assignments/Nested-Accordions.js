@@ -1,23 +1,25 @@
-.accordion {
-  list-style-type: none;
+function addOpenClass(elements){
+  element.className='accordion-open';
 }
 
-.accordion h3:before,
-.accordion h4:before {
-  padding-right: .5em;
+function remOpenClass(element){
+  element.className= '';
 }
 
-.accordion h3:before {
-  content: '\02193';
-}
+/**
+ * @param HTML Element emelment
+ * @return Boolean wheather `element` has `className` of 'accordion-open'
+ */
+ function hasOpenClass(element){
+   if(element.className === 'accordion-open'){
+     return true;
+   }
+   return false;
+ }
 
-.accordion h4:before {
-  content: '\2A01';
-}
-
-.accordion li > :first-child ~ * {
-  display: none; /* targets nested ul and its children */
-}
-.accordion li.accordion-open > :first-child ~ * {
-  display: block;
-}
+ function toggleOpenClass(element){
+   if(hasOpenClass(element)){
+     return remOpenClass(element);
+   }
+   addOpenClass(element);
+ }
