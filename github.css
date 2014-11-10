@@ -123,3 +123,17 @@ aside{
 #graph{
   width:50%;
 }
+@media (max-width:992){
+  body{
+    font-size:10px;
+  }
+  .octicon-logo-github{
+    font-size:20px;
+    padding-top:1.7ex;
+  }
+}
+@media (max-width:768px){
+  .center{
+    width:100%;
+  }
+}
