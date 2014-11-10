@@ -1,166 +1,175 @@
 <!doctype html>
 <html>
 <head>
-  <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/2.1.2/octicons.min.css">
-  <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css'>
-  <style>
-  </style>
+  <title>Github profile</title>
+    <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='http://cdnjs.cloudflare.com/ajax/libs/octicons/2.1.2/octicons.min.css'>
+    <link rel='stylesheet' href='github.css'>
 </head>
-<body ng-app=''>
+<body>
   <div class='container'>
-    <div class='container'>
-      <nav class='navbar navbar-default'>
-        <div class='container center'>
-          <a class='navbar-brand octicon octicon-logo-github' href='#'></a>
-          <form class='navbar-form navbar-left' role='search'>
-            <div class='form-group'>
-              <input type='text' class='form-control search' placeholder='Search Github'>
-            </div>
-          </form>
-          <ul class='nav navbar-nav'>
-            <li><a href='#'>Explore</a></li>
-            <li><a href='#'>Features</a></li>
-            <li><a href='#'>Enterprise</a></li>
-            <li><a href='#'>Blog</a></li>
-          </ul>
-          <section class='navbar-right'>
-            <button type='submit' class='btn btn-default sign-up'>Sign Up</button>
-            <button type='submit' class='btn btn-default sign-in'>Sign In</button>
-          </section>
-        </div>
-      </nav>
-    </div><!--END container-->
-    <div class='container content'>
-      <div class='container'>
-        <aside class='sidebar col-sm-3 col-md-3'>
-          <a href='#' class='thumbnail' id='avatar'><img src=''></a>
-          <h3 class='name'>{{name}}</h3>
-          <h4 class='login'>{{login}}</h4>
+    <nav class='navbar navbar-default'>
+      <div class='container center'>
+        <a class='navbar-brand' href='#'><span class='mega-octicon octicon-mark-github'></span></a>
+        <form class='navbar-form navbar-left' role='search'>
+          <div class='form-group'>
+            <input type='text' class='form-control search' placheholder='Search Github'>
+          </div>
+        </form>
+        <ul class='nav navbar-nav'>
+          <li><a href='#'>Explore</a></li>
+          <li><a href='#'>Features</a></li>
+          <li><a href='#'>Enterprise</a></li>
+          <li><a href='#'>Blog</a></li>
+        </ul>
+        <button type='submit' class='btn btn-default sign-up'>Sign Up</button>
+        <button type='submit' class='btn btn-default sign-in'>Sign In</button>
+      </div>
+    </nav>
+  </div>
+  <div class='container content'>
+    <div class ='container'>
+      <aside class='col-sm-3 col-md-3'>
+        <a href='https://avatars2.githubusercontent.com/u/8780547?v=2&s=460'><img id='avatar'></a>
+        <ul class='userInfo'>
+          <li><h3 id='name'>{{name}}</h3></li>
+          <li><h4 id='user'>{{user}}</h4></li>
           <hr>
-          <ul class='info list-unstyled'>
-            <li><span class="company octicon octicon-organization"></span>{{company}}</li>
-            <li><span class='location octicon octicon-location'></span>{{location}}</li>
-            <li><span class='octicon octicon-mail'></span><a href='#' class='email'>{{email}}</a></li>
-            <li><span class='octicon octicon-link'></span><a href='#' class='blog'>{{blog}}</a></li>
-            <li><span class='created octicon octicon-clock'></span>{{joined}}<span class='dateOf'></span></li>
-          </ul>
+          <li><span id='company' class='octicon octicon-organization'>{{company}}</span></li>
+          <li><span id='location' class='octicon octicon-location'></span>{{location}}</li>
+          <li><span class='octicon octicon-mail'>{{email}}</span></li><a id='email' href=''></a>
+          <li><span class='octicon octicon-link'>{{blog}}</span></li><a id='link' href=''></a>
+          <li><span id='created' class='octicon octicon-clock'>{{created}}</span></li>
           <hr>
-          <p><a href='#' class='followers'>{{followers}}</a> <a href='#' class='starred'>{{stared}}</a> <a href='#' class='following'>{{following}}</a></p>
-          <!--How to do these #'s-->
+          <p><a href='#'>1 Follower</a><a href=''>4 Starred</a> <a href=''>7 Following</a></p>
           <hr>
-          <h5>{{organizations}}</h5>
-          <a href='/TheIronYard--Orlando'><img class='orgs img-rounded' src='https://avatars3.githubusercontent.com/u/8798300?v=2&s=84'></a>
+          <h5>Organizations</h5>
+          <a href='https://avatars3.githubusercontent.com/u/8798300?v=2&s=84'><img class='orgs img-rounded' src='https://avatars3.githubusercontent.com/u/8798300?v=2&s=84'></a>
         </aside>
         <section class='col-sm-9 col-md-9'>
           <nav>
-            <ul class='nav nav-tabs' id='repMenu'>
-              <li><a id='contribmenu' class='tabMenu octicon octicon-diff-added' href='#' onclick="drop('contrib')">Contributions</a></li>
-              <li><a id='reposmenu' class='tabMenu octicon octicon-repo' href='#' onclick="drop('reps')">Repositories</a></li>
-              <li><a id='activitymenu' class='tabMenu octicon octicon-rss' href='#' onclick="drop('activity')">Public Activity</a></li>
+            <ul class='nav nav-tabs'>
+              <li><a id='contribmenu' href='#' onclick='drop("contrib")'>Contributions</a></li>
+              <li><a id='reposmenu' href='#' onclick='drop("repos")'>Repositories</a></li>
+              <li><a id='activitymenu' href='#' onclick='drop("activity")'>Public Activity</a></li>
             </ul>
           </nav>
-          <section id='contrib'>
-            <section class='popular col-sm-6 col-md-6'>
-              <h5 class='blockHead'>Popular repositories</h5>
-              <hr>
-              <ul class='popRepos list-unstyled'>
-                <li class='octicon octicon-repo-forked' style='text-indent:0;'><a href='#'>asoper29.github.io</a></li>
-                <hr>
-                <li class='octicon octicon-repo'><a href='#'>etsydemo</a></li>
-                <hr>
-                <li class='octicon octicon-repo-forked'><a href='#'>FEE--2014--FALL</a></li>
-                <hr>
-                <li class='octicon octicon-repo-forked'><a href='#'>freelance-theme</a></li>
-                <hr>
-                <li class='octicon octicon-repo-forked'><a href='#'>hGraph</a></li>
-              </ul>
-            </section>
-            <section class='contrib2 col-sm-6 col-md-6'>
-              <h5 class='blockHead'>Repositories contributed to</h5>
-              <hr>
-              <ul class='reposCon2 list-unstyled'>
-                <li class='octicon octicon-repo' style='text-indent:0;'><a href='#'>asoper29/24--Weekend-Warriors</a></li>
-                <hr>
-                <li class='octicon octicon-repo'><a href='#'>mema82/Surf-and-Paddle</a></li>
-                <hr>
-                <li class='octicon octicon-repo'><a href='#'>TheIronYard--../FEE--201400F..</a></li>
-              </ul>
-            </section>
-            <section class='pubCon col-sm-12' col-md-12>
-              <h5 class='blockHead'>Contributions</h5>
-              <img class='conImg' src='contributions.png'>
-            </section>
-            <section class='conActivity col-sm-12 col-md-12'>
-              <h5 class='activeHead'>Contribution activity</h5>
-              <h6><span class='octicon octicon-git-commit'>10 Commits</span></h6>
-              <h6><span class='octicon octicon-git-pull-request'>3 Pull Requests</span></h6>
-              <h6><span class='octicon octicon-issue-opened'>1 Issue Reported</span></h6>
-            </section>
-          </section><!--END contrib-->
-          <section id='repos'>
-            <section class='listOFRepos col-sm-12 col-md-12'>
-              <ul class='repoList list-unstyled'>
-                <a href='#'><li><h3>Repo #1</h3></li></a>
-                <hr>
-                <a href='#'><li><h3>Repo #2</h3></li></a>
-                <hr>
-                <a href='#'><li><h3>Repo #3</h3></li></a>
-                <hr>
-                <a href='#'><li><h3>Repo #4</h3></li></a>
-                <hr>
-                <a href='#'><li><h3>Repo #5</h3></li></a>
-                <hr>
-                <a href='#'><li><h3>Repo #6</h3></li></a>
-                <hr>
-                <a href='#'><li><h3>Repo #7</h3></li></a>
-                <hr>
-                <a href='#'><li><h3>Repo #8</h3></li></a>
-                <hr>
-              </ul>
-            </section>
-          </section><!--END repos-->
-          <section id='activity'>
-            <section class='listOfActive col-sm-12 col-md-12'>
-              <ul class='activeList list-unstyled'>
-                <a href='#'><li><h3>PR #1</h3></li></a>
-                <hr>
-                <a href='#'><li><h3>Commit #7</h3></li></a>
-                <hr>
-                <a href='#'><li><h3>Issue #3</h3></li></a>
-                <hr>
-                <a href='#'><li><h3>Push #4</h3></li></a>
-                <hr>
-                <a href='#'><li><h3>PR #22</h3></li></a>
-                <hr>
-                <a href='#'><li><h3>Push to Master #17</h3></li></a>
-                <hr>
-                <a href='#'><li><h3>Issue #2</h3></li></a>
-                <hr>
-                <a href='#'><li><h3>Commit #18</h3></li></a>
-                <hr>
-              </ul>
-            </section>
-          </section><!--END acticity-->
         </section>
-      </div>
-    </div><!--END content container-->
-  </div><!--END container-->
-  <script src='http://code.jquery.com/jquery-1.11.0.min.js'></script>
-  <script>
-  function drop(id){
-    var navID =['contrib', 'repos', 'activity'];
-    var dropDown = document.getElementById(id);
-    navId.forEach(function(value,index){
-      var dropMenu = value + 'menu';
-      if(value === id){
-        dropDown.style.display = 'block';
-        document.getElementById(dropMenu).style.borderColor = 'lightgray';
-        document.getElementById(dropMenu).style.borderBottomColor = 'white';
-      }else{
-        document.getElementById(value).style.display = 'none';
-        document.getElementById(dropMenu).style.display = 'transparent';
+
+        <section id='contrib'>
+          <section class='popular col-sm-6 col-md-6'>
+            <h5 class='blockHead'>Popular Repositories</h5>
+            <hr>
+            <ul class='popRepos list-unstyled'>
+              <li class='octicon octicon-repo-forked' styled='text-indent:0;'><a href='#'>FEE--2014-FALL</a></li>
+              <hr>
+              <li class='octicon octicon-repo-forked'><a href='#'>html5-css3-js-calculator</a></li>
+              <hr>
+              <li class='octicon octicon-repo-forked'><a href='#'>javascript</a></li>
+              <hr>
+              <li class='octicon octicon-repo-forked'><a href='#'>javascript-1</a></li>
+              <hr>
+              <li class='octicon octicon-repo'><a href='#'>jmanock.github.io</a></li>
+            </ul>
+          </section>
+        </section>
+
+        <section id='contrib-stat'>
+          <section id='graph' class='pubCon col-sm-9 col-md-9'>
+            <h5 class='blockHead'>Contributions</h5>
+            <img class='conImg'  alt='some stuff goes here'>
+          </section>
+          <section id='conActivity' class='col-sm-9 col-md-9'>
+            <h5 class='activeHead'>Contribution activity</h5>
+            <h6><span class='octicon octicon-git-commit'>11 Commits</span></h6>
+            <h6><span class='octicon octicon-git-pull-request'>2 Pull Requests</span></h6>
+            <h6><span class='octicon octicon-issue-opened'>1 Issue Reported</span></h6>
+          </section>
+        </section>
+
+        <section id='repos'>
+          <section class='listOfRepos col-sm-12 col-md-12 hidden'>
+            <ul class='repoList'>
+              <a href='#'><li><h3>Repo #1</h3></li></a>
+              <hr>
+              <a href='#'><li><h3>Repo #2</h3></li></a>
+              <hr>
+              <a href='#'><li><h3>Repo #3</h3></li></a>
+              <hr>
+              <a href='#'><li><h3>Repo #4</h3></li></a>
+              <hr>
+              <a href='#'><li><h3>Repo #5</h3></li></a>
+              <hr>
+              <a href='#'><li><h3>Repo #6</h3></li></a>
+              <hr>
+              <a href='#'><li><h3>Repo #7</h3></li></a>
+              <hr>
+              <a href='#'><li><h3>Repo #8</h3></li></a>
+              <hr>
+            </ul>
+          </section>
+        </section>
+
+        <section id='activity'>
+          <section class='listOfActive col-sm-12 col-md-12 hidden'>
+            <ul class='activeList'>
+              <a href='#'><li><h3>PR #1</h3></li></a>
+              <hr>
+              <a href='#'><li><h3>Commit #7</h3></li></a>
+              <hr>
+              <a href='#'><li><h3>Issue #3</h3></li></a>
+              <hr>
+              <a href='#'><li><h3>Push #4</h3></li></a>
+              <hr>
+              <a href='#'><li><h3>Push to Master</h3></li></a>
+              <hr>
+              <a href='#'><li><h3>Issue #2</h3></li></a>
+              <hr>
+              <a href='#'><li><h3>Commit #18</h3></li></a>
+              <hr>
+            </ul>
+          </section>
+        </section>
+      </section>
+    </div>
+  </div>
+  <script src='https://code.jquery.com/jquery-1.11.0.min.js'></script>
+    <script>
+    $.ajax ({
+      type:'GET',
+      url:'https://api.github.com/users/jmanock',
+      seccess: function(objests){
+        $('#name').html(objects.name);
+        $('#user').html(objects.login);
+        $('#company').html(objects.company);
+        $('#location').html(objects.location);
+        $('#avatar').attr('src', objects.avatar_url);
+        $('#link').html(objects.blog).attr('href',objects.blog);
+        $('#email').html(objects.email).attr('href',objects.email);
+
+        var date = new Date(objects.created_at);
+        date = date.toDateString();
+        date = date.slice(3);
+        $('#created').html('Joined on ' + date);
       }
     });
-  }
-  </script>
+    </script>
+    <script>
+    function drop(id){
+      var navID = ['contrib', 'repos', 'activity'];
+      var dropDown = document.getElementById(id);
+      navID.forEach(function(value,index){
+        var dropMenu = value + 'menu';
+        if(value==id){
+          dropDown.style.display = 'block';
+          document.getElementById(dropMenu).style.borderColor = 'lightgray'
+          document.getElementById(dropMenu).style.borderBottomColor = 'white'
+        }else{
+          document.getElementById(value).style.display = 'none';
+          document.getElementById(dropMenu).style.borderColor = 'transparent'
+        };
+      });
+    }
+    </script>
+  </body>
+  </html>
