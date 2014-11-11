@@ -134,42 +134,6 @@
     </div>
   </div>
   <script src='https://code.jquery.com/jquery-1.11.0.min.js'></script>
-    <script>
-    $.ajax ({
-      type:'GET',
-      url:'https://api.github.com/users/jmanock',
-      seccess: function(objests){
-        $('#name').html(objects.name);
-        $('#user').html(objects.login);
-        $('#company').html(objects.company);
-        $('#location').html(objects.location);
-        $('#avatar').attr('src', objects.avatar_url);
-        $('#link').html(objects.blog).attr('href',objects.blog);
-        $('#email').html(objects.email).attr('href',objects.email);
-
-        var date = new Date(objects.created_at);
-        date = date.toDateString();
-        date = date.slice(3);
-        $('#created').html('Joined on ' + date);
-      }
-    });
-    </script>
-    <script>
-    function drop(id){
-      var navID = ['contrib', 'repos', 'activity'];
-      var dropDown = document.getElementById(id);
-      navID.forEach(function(value,index){
-        var dropMenu = value + 'menu';
-        if(value==id){
-          dropDown.style.display = 'block';
-          document.getElementById(dropMenu).style.borderColor = 'lightgray'
-          document.getElementById(dropMenu).style.borderBottomColor = 'white'
-        }else{
-          document.getElementById(value).style.display = 'none';
-          document.getElementById(dropMenu).style.borderColor = 'transparent'
-        };
-      });
-    }
-    </script>
+  <script src='scripts.js'></script>
   </body>
   </html>
