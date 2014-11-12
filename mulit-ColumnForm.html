@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Multi-Column Form</title>
+  <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/bootstrap.min.css'>
+<style>
+body{
+  background-color:lightblue;
+}
+</style>
+</head>
+<body>
+  <div class = 'container'>
+    <div class='main'>
+      <form class='form-inline' role='form'>
+        <div id='col1' class='col-sm-6 col-md-4'>
+          <a <label for='first_name'>First Name</label></a>
+          <input type='text' id='first_name' name='first_name' placeholder='First Name' required>
+          </input>
+          <label for='last_name'>Last Name</label>
+          <input type='text' id='last_name' name='last_name' placeholder='Last Name' required>
+        </input>
+        <label for='emai'>Email Address</label>
+        <input type='email' class='form-control' id='email' name='email' placeholder='email@email.com' required>
+      </input>
+      <label for='country'> Country</label>
+      <select name='country' id='country'>
+        <option value='USA'>United States</option>
+        <option value='ussr'>Russia</option>
+        <option value='canada'>Canada</option>
+        <option value='mex'>Mexico</option>
+      </select>
+      <label for='biography'>Biography</label>
+      <input type='text' id='biography'>
+    </input>
+  </div>
+  <div id='col2' class='col-sm-6 col-md-4'>
+    <label for='phone'>Phone Number</label>
+    <input type='tel' id='phoneNum' name='phoneNum' placeholder='123.456.7890' required>
+  </input>
+  <label for='affiliations'>Affiliations</label>
+  <input type='text' id='affiliations'>
+</input>
+<label for='occupation'>Occupation</label>
+<select name='occupation' id='occupation'>
+<option value='programer'>Programer</option>
+<option value='cop'>Cop</option>
+<option value='fireMan'>Fire Man</option>
+</select>
+<label for='dogsname'>Favorite Movie</label>
+<input type='password' id='secret'>
+</input>
+<label for='computer'>Favorite Computer</label>
+<input type='text' id='computer' placeholder='mac'>
+</input>
+</div>
+<div id='col3' class='col-sm-12 col-md-4'>
+  <label for='talent'>Type of talent</label>
+  <select name='talent' id='talent'>
+    <option>Choose a Talent</option>
+    <option value='music'>Music</option>
+    <option value='spots'>Sports</option>
+    <option value='games'>Games</option>
+  </select>
+
+
+</body>
+</html>
