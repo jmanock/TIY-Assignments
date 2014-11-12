@@ -1,3 +1,4 @@
+
 var user = prompt('Which user are you looking for?');
 $.ajax({
   type:'GET',

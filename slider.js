@@ -1,3 +1,4 @@
+
 $('.rightArrow').click(function(){
   $('.active').addClass('hidden').next().removeClass('hidden');
   $('.active').removeClass('active').next().addClass('active');
