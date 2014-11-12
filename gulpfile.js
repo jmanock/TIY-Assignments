@@ -3,12 +3,12 @@ connect = require('gulp-connect');
 
 gulp.task('connect', function(){
   connect.server({
-    livereload: true;
+    livereload: true
   });
 });
 
 gulp.task('reload', function(){
-  gulp.src('./*.html');
+  gulp.src('./*.html')
   .pipe(connect.reload());
 });
 

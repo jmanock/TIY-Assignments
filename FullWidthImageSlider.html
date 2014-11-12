@@ -3,80 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <title>Full Width Image Slider</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='slider.css'>
+  <script src='//code.jquery.com/jquery-1.11.0.min.js'></script>
   <style>
-  .slider {
-    list-style:none;
-  }
-  #one{
-    text-align:center;
-  }
-  #two{
-    display:none;
-  }
-  #three{
-    display:none;
-  }
-  #four{
-    display:none;
-  }
-  #five{
-    display:none;
-  }
-  a:hover{
-    text-decoration:none;
-    color:black;
-  }
-  a{
-    text-decoration:none;
-    color:gray;
-  }
-  .buttons{
-    text-align:center;
-    text-decoration:none;
-    color:gray;
-  }
-  .buttons > li{
-    display:inline;
-  }
-  .leftArrow{
-    position:absolute;
-    top:0;
 
-  }
-  .rightArrow{
-    position:absolute;
-    top:0;
-  }
   </style>
-
 </head>
 <body>
-  <section class='pics'>
-    <ul class='slider'>
-      <li id='one'><img src='http://fillmurray.com/200/300'></li>
-      <li id='two' class='hidden'><img src='http://fillmurray.com/200/300'></li>
-      <li id='three' class='hidden'><img src='http://fillmurray.com/200/300'></li>
-      <li id='four' class='hidden'><img src='http://fillmurray.com/200/300'></li>
-      <li id='five' class='hidden'><img src='http://fillmurray.com/200/300'></li>
-    </ul>
-    <span>
-  </section>
- <section>
-   <ul class='buttons'>
-     <li class='one'><a href='#'>button</a></li>
-     <li class='two'><a href='#'>button</a></li>
-     <li class='three'><a href='#'>button</a></li>
-     <li class='four'><a href='#'>button</a></li>
-     <li class='five'><a href='#'>button</a></li>
-   </ul>
- </section>
- <nav>
-   <span class='leftArrow'><img src='#' alt='left'></span>
-   <span class='rightArrow'><img src='#' alt='right'></span>
- </nav>
- <script>
- $("img").click(function() {    $(this).addClass('hidden').parent().next().removeClass('hidden')
-   });
- </script>
+  <center>
+  <section class='main container-fluid'>
+    <div id='slider'>
+      <ul class='slideList'>
+        <li id='one' class='show'><img src='http://fillmurray.com/400/500'></li>
+        <li id='two' class='hidden'><img src='http://placesheen.com/400/500'></li>
+        <li id='three' class='hidden'><img src='http://fillmurray.com/400/500'></li>
+        <li id='four' class='hidden'><img src='http://placesheen.com/400/500'></li>
+        <li id='five' class='hidden'><img src='http://fillmurray.com/400/500'></li>
+      </ul>
+    </div>
+    <div id='buttons'>
+      <button id='leftArrow' class='glyphicon glyphicon-arrow-left hidden'></button>
+      <button id='rightArrow' class='glyphicon glyphicon-arrow-right'></button>
+    </div>
+    <form id='radio'>
+      <input type='radio' class='round checked' name='slides' id='img1' value='1' checked>
+      <input type='radio' class='round' name='slides' id='img2' value='2'>
+      <input type='radio' class='round' name='slides' id='img3' value='3'>
+      <input type='radio' class='round' name='slides' id='img4' value='4'>
+      <input type='radio' class='round' name='slides' id='img5' value='5'>
+    </form>
+  </div>
+</center>
+</section>
+<script>
+$("#rightArrow").click(function(){
+  $('.show').addClass('hidden').removeClass('show')
+  .next().removeClass('hidden').addClass('show');
+  if($('#five').hasClass('show')){
+    $('#rightArrow').addClass('hidden');
+  }if($('#leftArrow').hasClass('hidden')){
+    $('#leftArrow').removeClass('hidden');
+  }
+});
+$('#leftArrow').click(function(){
+  $('.show').addClass('hidden').removeClass('show').prev().removeClass('hidden').addClass('show');
+  if($('#one').hasClass('show')){
+    $('#leftArrow').addClass('hidden');
+  }if($('#rightArrow').hasClass('hidden')){
+    $('#rightArrow').removeClass('hidden');
+  }
+});
+$('#img1').click(function(){
+  $('#slideList > li:first').addClass('show').removeClass('hidden');
+  if($('#slideList > li:first').siblings('.show').addClass('hidden').removeClass('show'));
+  if($('#leftArrow').hasClass('show').removeClass('show').addClass('hidden'));
+});
+</script>
 </body>
 </html>
