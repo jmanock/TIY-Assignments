@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Full Width Image Slider</title>
+  <style>
+  .slider {
+    list-style:none;
+  }
+  #one{
+    text-align:center;
+  }
+  #two{
+    display:none;
+  }
+  #three{
+    display:none;
+  }
+  #four{
+    display:none;
+  }
+  #five{
+    display:none;
+  }
+  a:hover{
+    text-decoration:none;
+    color:black;
+  }
+  a{
+    text-decoration:none;
+    color:gray;
+  }
+  .buttons{
+    text-align:center;
+    text-decoration:none;
+    color:gray;
+  }
+  .buttons > li{
+    display:inline;
+  }
+  .leftArrow{
+    position:absolute;
+    top:0;
+
+  }
+  .rightArrow{
+    position:absolute;
+    top:0;
+  }
+  </style>
+
+</head>
+<body>
+  <section class='pics'>
+    <ul class='slider'>
+      <li id='one'><img src='http://fillmurray.com/200/300'></li>
+      <li id='two' class='hidden'><img src='http://fillmurray.com/200/300'></li>
+      <li id='three' class='hidden'><img src='http://fillmurray.com/200/300'></li>
+      <li id='four' class='hidden'><img src='http://fillmurray.com/200/300'></li>
+      <li id='five' class='hidden'><img src='http://fillmurray.com/200/300'></li>
+    </ul>
+    <span>
+  </section>
+ <section>
+   <ul class='buttons'>
+     <li class='one'><a href='#'>button</a></li>
+     <li class='two'><a href='#'>button</a></li>
+     <li class='three'><a href='#'>button</a></li>
+     <li class='four'><a href='#'>button</a></li>
+     <li class='five'><a href='#'>button</a></li>
+   </ul>
+ </section>
+ <nav>
+   <span class='leftArrow'><img src='#' alt='left'></span>
+   <span class='rightArrow'><img src='#' alt='right'></span>
+ </nav>
+ <script>
+ $("img").click(function() {    $(this).addClass('hidden').parent().next().removeClass('hidden')
+   });
+ </script>
+</body>
+</html>
