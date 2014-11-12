@@ -4,18 +4,17 @@
   <meta charset="UTF-8">
   <title>Responsive Multi-Column Form</title>
   <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/bootstrap.min.css'>
+  <link rel='stylesheet' href='columnForm.css'>
 <style>
-body{
-  background-color:lightblue;
-}
+
 </style>
 </head>
 <body>
   <div class = 'container'>
     <div class='main'>
-      <form class='form-inline' role='form'>
+      <form class='form-inline' role='form' id='form'>
         <div id='col1' class='col-sm-6 col-md-4'>
-          <a <label for='first_name'>First Name</label></a>
+           <label for='first_name'>First Name</label>
           <input type='text' id='first_name' name='first_name' placeholder='First Name' required>
           </input>
           <label for='last_name'>Last Name</label>
@@ -63,7 +62,31 @@ body{
     <option value='spots'>Sports</option>
     <option value='games'>Games</option>
   </select>
-
-
+  <label for='soda'>Favorite Soda</label>
+  <input type='text' id='soda' placeholder='coke'>
+</input>
+<label for='power'>Special Power</label>
+<input type='text' id='power' placeholder='x-ray'>
+</input>
+<label for='weapon'>Weapon of Choice</label>
+<input type='text' id='weapon' placeholder='gun'>
+</input>
+<label for='comments'>Comments</label>
+<input type='text'id='comments'></input>
+</div>
+<div id='button-submit'>
+  <input class='submitBTN' type='submit' value='Send'>
+</input>
+</div>
+</form>
+</div>
+</div>
+<script src='http://code.jquery.com/jquery-1.11.0.min.js'></script>
+<script>
+$('#form').submit(function(event){
+  event.prevetDefault();
+  console.log($(this).serializeArray());
+});
+</script>
 </body>
 </html>

@@ -1,0 +1,70 @@
+body{
+  background-color:#47a3da;
+  font-family:'lato';
+  font-size:14pt;
+}
+.container{
+  padding:0;
+}
+input, select{
+  font-family:'lato';
+  width:90%;
+  background-color:transparent;
+  color:#fff;
+  height:5.5ex;
+}
+select{
+  color:#fff;
+}
+input{
+  border:3px solid white;
+  padding-left:1.5ex;
+}
+#comments, #biography, #affiliations{
+  background-color:transparent;
+  height:22ex;
+  width:352px;
+  border:3px solid white;
+  color:white;
+  padding-bottom:18ex;
+}
+.biography{
+  width:inherit;
+}
+#submit{
+  width:13em;
+  margin:auto;
+}
+label{
+  margin-top:3ex;
+  color:#ffffff;
+  text-transform:uppercase;
+  cursor:pointer;
+  font-size:14pt;
+  font-weight:normal;
+}
+::-webkit-input-placeholder{
+  color:#106894;
+  font-style:italic;
+}
+:-moz-placeholder{
+  color:#10689a;
+  font-style:italic;
+}
+:-ms-input-placeholder{
+  color:#10689a;
+  font-style:italic;
+}
+@media (max-width: 1200px){
+  #col1, #col2{
+    width:50%;
+  }
+  col3{
+    width:100%;
+  }
+}
+@media (max-width:768px){
+  #col1, #col2, #col3{
+    width:100%;
+  }
+}
