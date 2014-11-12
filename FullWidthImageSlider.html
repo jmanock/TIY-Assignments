@@ -5,10 +5,8 @@
   <title>Full Width Image Slider</title>
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css'>
   <link rel='stylesheet' href='slider.css'>
-  <script src='//code.jquery.com/jquery-1.11.0.min.js'></script>
-  <style>
-
-  </style>
+  <script src='http://code.jquery.com/jquery-1.11.0.min.js'></script>
+  <script src='slider.js'></script>
 </head>
 <body>
   <center>
@@ -37,27 +35,23 @@
 </center>
 </section>
 <script>
-$("#rightArrow").click(function(){
-  $('.show').addClass('hidden').removeClass('show')
-  .next().removeClass('hidden').addClass('show');
-  if($('#five').hasClass('show')){
-    $('#rightArrow').addClass('hidden');
-  }if($('#leftArrow').hasClass('hidden')){
-    $('#leftArrow').removeClass('hidden');
+$('.rightArrow').click(function(){
+  $('.active').addClass('hidden').next().removeClass('hidden');
+  $('.active').removeClass('show').next().addClass('show');
+  $('.current').removeClass('show').next().addClass('show');
+  $('.leftArrow').removeClass('hidden');
+  if($('#sliderList > li:last').hasClass('show')){
+    $('.rightArrow').addClass('hidden');
   }
 });
-$('#leftArrow').click(function(){
-  $('.show').addClass('hidden').removeClass('show').prev().removeClass('hidden').addClass('show');
-  if($('#one').hasClass('show')){
-    $('#leftArrow').addClass('hidden');
-  }if($('#rightArrow').hasClass('hidden')){
-    $('#rightArrow').removeClass('hidden');
+$('.leftArrow').click(function(){
+  $('active').addClass('hidden').prev().removeClass('hidden');
+  $('.active').removeClass('show').prev().addClass('show');
+  $('.current').removeClass('show').prev().addClass('show');
+  $('.rightArrow').removeClass('hidden');
+  if($('#sliderList > li:first' ).hasClass('show')){
+    $('.leftArrow').addClass('hidden');
   }
-});
-$('#img1').click(function(){
-  $('#slideList > li:first').addClass('show').removeClass('hidden');
-  if($('#slideList > li:first').siblings('.show').addClass('hidden').removeClass('show'));
-  if($('#leftArrow').hasClass('show').removeClass('show').addClass('hidden'));
 });
 </script>
 </body>
