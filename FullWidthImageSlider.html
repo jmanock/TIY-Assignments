@@ -10,7 +10,7 @@
   <script src='slider.js'></script>
 </head>
 <body>
-  <center>
+  <!--Use div for the container-->
   <section class='main container-fluid'>
     <div id='slider'>
       <ul class='slideList'>
@@ -21,11 +21,15 @@
         <li id='five' class='hidden'><img src='http://fillmurray.com/400/500'></li>
       </ul>
     </div>
+    <!--Nav use not div use buttons for form elements-->
     <div id='buttons'>
+      <!-- a tag not buttons -->
       <button id='leftArrow' class='glyphicon glyphicon-arrow-left hidden'></button>
       <button id='rightArrow' class='glyphicon glyphicon-arrow-right'></button>
     </div>
+    <!-- classes not ids-->
     <form id='radio'>
+      <!--nav with a tags inside-->
       <input type='radio' class='round checked' name='slides' id='img1' value='1' checked>
       <input type='radio' class='round' name='slides' id='img2' value='2'>
       <input type='radio' class='round' name='slides' id='img3' value='3'>

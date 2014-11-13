@@ -1,4 +1,4 @@
-
+// Refactor when you have the same code ie:left arrow and right arrow
 $('.rightArrow').click(function(){
   $('.active').addClass('hidden').next().removeClass('hidden');
   $('.active').removeClass('active').next().addClass('active');
@@ -17,18 +17,19 @@ $('.leftArrow').click(function(){
     $('.leftArrow').addClass('hidden');
   }
 });
-// $('#img1').click(function(){
-//   $('.active').addClass('hidden').removeClass('active');
-//   $('#one').removeClass('hidden').addClass('active');
-//   $('.current').removeClass('current');
-//   $('#img1').addClass(' ');
-//   $('.leftArrow').addClass('hidden');
-//   $('.rightArrow').removeClass('hidden');
-// });
-//
-// $('#img2').click(function(){
-//   $('.active').addClass('hidden').removeClass('active');
-//   $('#two').removeClass('hidden').addClass('active');
-//   $(".current").removeClass('current');
-//   $('.leftArrow', '.rightArrow').removeClass('hidden');
-// });
+// Refactor all the img's because they have the same code
+$('#img1').click(function(){
+  $('.active').addClass('hidden').removeClass('active');
+  $('#one').removeClass('hidden').addClass('active');
+  $('.current').removeClass('current');
+  $('#img1').addClass(' ');
+  $('.leftArrow').addClass('hidden');
+  $('.rightArrow').removeClass('hidden');
+});
+
+$('#img2').click(function(){
+  $('.active').addClass('hidden').removeClass('active');
+  $('#two').removeClass('hidden').addClass('active');
+  $(".current").removeClass('current');
+  $('.leftArrow', '.rightArrow').removeClass('hidden');
+});
