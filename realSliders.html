@@ -3,48 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <title>Responsive Full-Width Slider</title>
-  <link rel='stylesheet' href='jquery'>
   <link rel='stylesheet' href='bootstrap'>
   <style>
-    .slider{
-      position:relative;
-    }
-    .slider > nav{
-      position: absolute;
-      width:100%;
-      top:25%;
-      margin:25% 0;
-    }
-    .slide > nav >a:first-child{
-      float:left;
-    }
-    .slide > nav > a:last-child{
-      float:right;
-    }
-    .slider .slides > li{
-      width:100%;
-      display:inline-block;
-      transition: margin-left 2s ease;
-    }
-    .slider .slides{
-      overflow:hidden;
-      height:215px;
-      white-space:nowrap;
-    }
-    .slider .bullets{
-      fonts-size:200%;
-      position:absolute;
-      width:100%;
-      text-align:center;
-      height:25%;
-
-    }
-    .slider .slides > li:exit{
-      margin-left:-100%;
-    }
-    .slider .bullets .active{
-      font-size:175%;
-    }
+  .slider{
+    position:relative;
+  }
+  .slider > .buttons{
+    position:absolute;
+    z-index:1;
+    width:100%;
+    top:25%;
+  }
+  .slider > .buttons > a:first-child{
+    float:left;
+  }
+  .slider > .buttons > a:last-child{
+    float:right;
+  }
+  .slider .slides{
+    overflow:hidden;
+    white-space:nowrap;
+  }
+  .slider .slides > li{
+    display:inline-block;
+    transition:margin-left 2s ease;
+    width:100%;
+  }
+  .slider .bullets{
+    position:absolute;
+    bottom:10%;
+    top:auto;
+    width:100%;
+    font-size:300%;
+    height:25%;
+    text-align:center;
+    background-color:rgba(66,66,66,0.5);
+  }
+  .slider .slides > li.exit{
+    margin-left:-100%;
+  }
+  .slider .bullets{
+    line-height:150%;
+  }
+  .slider .bullets .active{
+    font-size:150%;
+  }
   </style>
 </head>
 <body>
@@ -56,79 +59,109 @@
       </nav>
       <ol class='list-inline row slides'>
         <template>
-          <li class='thumbnail'><a href='{{image.src}}'><img src='{{image.src}}'></a></li>
+          <li><a href='{{image.src}}' class='thumbnail'><img src='{{image.src}}'></a></li>
         </template>
       </ol>
       <nav class='bullets'>
         <template>
-          <a href='#image-{{index}}'>{{index}}</a>
+          <a href='#image-{{index}}'>&bull;</a>
         </template>
       </nav>
-    </div><!--.slider-->
-  </div><!--.container-->
+    </div> <!--.slider-->
+  </div> <!--.container-->
+
   <script src='jquery'></script>
-  <script src='bootstrap'></script>
   <script src='lodash'></script>
   <script>
   ;(function(){
-    _.templateSettings.interpolate=/{{([\s\S]+?)}}/g;
-    var $slides = $('.slides'),
-        $slide = ($($'.slides template').prop('content').children),
-        slideTpl = _.template($slide.html());
-        $buttons = $('.buttons'),
-        $bullets = $('.bullets')
-        $bullet = $($('.template', $bullets).prop('.content').children);
-
-    // download the images?
-    var images = [
-    {src:'http://lorempixel.com/400/200/sports/1/'},
-    {src:'http://lorempixel.com/400/200/sports/2/'},
-    {src:'http://lorempixel.com/400/200/sports/3/'},
-    {src:'http://lorempixel.com/400/200/sports/4/'},
-    {src:'http://lorempixel.com/400/200/sports/5/'},
-    {src:'http://lorempixel.com/400/200/sports/6/'},
-    {src:'http://lorempixel.com/400/200/sports/7/'},
-    {src:'http://lorempixel.com/400/200/sports/8/'},
-    {src:'http://lorempixel.com/400/200/sports/9/'},
-    {src:'http://lorempixel.com/400/200/sports/10/'}
+    var images =[
+    {src: 'one.jpg'},
+    {src: 'two.jpg'},
+    {src: 'three.jpg'},
+    {src: 'four.jpg'},
+    {src: 'five.jpg'},
+    {src: 'six.jpg'},
+    {src:'seven.jpg'},
+    {src: 'eight.jpg'},
+    {src:'nine.jpg'}
     ];
 
-    _.each(images, function(image){
-      $slide.clone().html(slideTpl({image:image})).appendTo($slides);
+    _.templateSettings.interpolate = /{{[\s\S]+?}}/g;
 
-    });// End Each(images)
+    var $slided = $('.slides'),
+    $slide = $($slides.find('template').prop('content').children),
+    slideTpl = _.template($slide.html()),
+    $buttons = $('.buttons'),
+    $bullets = $('.bullets'),
+    $bullet = $($('template', $bullets).prop('content').children);
 
+    /**
+     * Dynamically create images / bullets...
+     */
+    _.each(images, fuction(image, index){
+      $slide.clone()
+      .html(slideTpl({image:image}))
+      .data('slideIndex', index)
+      .appendTo($bullets);
+    });
+      /**
+       * @event next
+       * @element .slider
+       */
+    $('.slider').on('next', function(event){
+      var $li = $('li:not(.exit):first', $slides).trigger('exit');
+      $bullets.trigger('activate', $li.data('slideIndex')+1);
+    });
+      /**
+       * @event prev
+       * @element .slider
+       */
+    $('.slider').on('prev', function(event){
+      var $li('li.exit:last', $slides).trigger('enter');
+      $bullets.trigger('activate', $li.data('slideIndex'));
+    });
+      /*
+       * @event exit
+       * @element .slider .slides > li
+       */
+    $('.slider').on('exit', '.slides > li', function(event){
+      $(this).addClass('exit');
+      return false;
+    });
+    /**
+     * @event enter
+     * @element .slider .slides > li
+     */
+    $('.slider').on('enter', '.slides > li', function(event){
+      return false;
+    });
+    /**
+     * @event activate
+     * @element .bullets
+     */
+    $bullets.on('active', function(event,index){
+      $($(this).children()
+      .removeClass('active')
+      .get(index)).addClass('active');
+    });
+    /*
+     * @event click
+     * @element .buttons > a.next
+     */
     $buttons.find('a.next').click(function(event){
-      //console.log('I got clicked' this .event.target);
-      //$sliders.children('li:not(.exit):first')
-      //.addClass('exit');
       $(this).trigger('next');
       return false;
     });
+    /*
+     * @event click
+     * @element .buttons > a.prev
+     */
     $buttons.find('a.prev').click(function(event){
-      //$sliders.children('li.exit:last').removeClass('exit');
       $(this).trigger('prev');
       return false;
     });
-    $slides on('next', function('event'){
-      $('li.not(.exit):first' this).addClass('exit')
-    })
-    $slides.on('preve', function('event'){
-      $('li.exit:last', $slides).removeClass('exit');
-    });
-    $('.sliders')on('exit'. '.slider > li'.function(){
-      $(this).data('slideIndex');
-      $(this)addClass('exit');
-      return false;
-    })
-    $('.slider').on('enter','.slides > li'. function(event){
 
-    });
-    $bullets.on('activate', function(event,index){
-      $($(this).children().removeClass('active').get(index + 1)
-      addClass())
-    })
-  })(); // End Closuer
-  </script>
+  });
+</script>
 </body>
 </html>
