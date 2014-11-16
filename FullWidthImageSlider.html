@@ -1,63 +1,196 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Full Width Image Slider</title>
+  <title>Image Slider</title>
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css'>
-  <link rel='stylesheet' href='slider.css'>
-  <script src='http://code.jquery.com/jquery-1.11.0.min.js'></script>
-  <script src='slider.js'></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <style>
+  body {
+  background-color: gray;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
+
+.slide img{
+  height: 450px;
+  width: 400px;
+  border-radius: 5%;
+  margin: 10% 0;
+}
+.hidden {
+  display: none;
+}
+
+.buttons {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 .5ex;
+  background-color: #999;
+  cursor: pointer;
+}
+
+.buttons:hover {
+  background-color: #666;
+}
+
+.current:hover {
+  background-color: #47A3DA;
+}
+
+.current {
+  background-color: #47A3DA;
+  box-shadow: 0 0 0 2px #47A3DA;
+  transition: margin-top 2s ease;
+}
+
+.left {
+  height: auto;
+  width: 100px;
+  float: left;
+  position: absolute;
+  top: 50%;
+  left: 19%;
+  cursor: pointer;
+  background-color:black;
+  color:white;
+}
+
+.right {
+  height: auto;
+  width: 100px;
+  float: right;
+  position: absolute;
+  top: 50%;
+  right: 15%;
+  cursor: pointer;
+  background-color:black;
+  color:white;
+}
+  </style>
 </head>
 <body>
-  <!--Use div for the container-->
-  <section class='main container-fluid'>
-    <div id='slider'>
-      <ul class='slideList'>
-        <li id='one' class='show'><img src='http://fillmurray.com/400/500'></li>
-        <li id='two' class='hidden'><img src='http://placesheen.com/400/500'></li>
-        <li id='three' class='hidden'><img src='http://fillmurray.com/400/500'></li>
-        <li id='four' class='hidden'><img src='http://placesheen.com/400/500'></li>
-        <li id='five' class='hidden'><img src='http://fillmurray.com/400/500'></li>
-      </ul>
+  <div class='container-fluid'>
+  <section class="main">
+        <ul id="slider">
+          <li id="slide1" class="active slide"><a href="http://lorempixel.com/400/400/sports/1">
+            <img src="http://lorempixel.com/400/400/sports/1" alt="eincage"></a></li>
+          <li id="slide2" class="hidden slide"><a href="http://lorempixel.com/400/400/sports/2">
+            <img src="http://lorempixel.com/400/400/sports/2" alt="overlyobsessedcage"></a></li>
+          <li id="slide3" class="hidden slide"><a href="http://lorempixel.com/400/400.sports/3">
+          <img src="http://lorempixel.com/400/400/sports/3" alt="creepykidcage"></a></li>
+          <li id="slide4" class="hidden slide"><a href="http://lorempixel.com/400/400/sports/4">
+            <img src="http://lorempixel.com/400/400/sports/4" alt="queencage"></a></li>
+          <li id="slide5" class="hidden slide"><a href="http://lorempixel.com/400/400/sports/5">
+            <img src="http://lorempixel.com/400/400/sports/5" alt="kimjongcage"></a></li>
+          <li id="slide6" class="hidden slide"><a href="http://lorempixel.com/400/400/sports/6">
+            <img src="http://lorempixel.com/400/400/sports/6" alt="momkidcage"></a></li>
+          <li id="slide7" class="hidden slide"><a href="http://lorempixel.com/400/400/sports/7">
+            <img src="http://lorempixel.com/400/400/sports/7" alt="monacage"></a></li>
+        </ul>
+        </section>
+        <nav>
+          <ul>
+            <li class="buttons current" id="button1">
+            <li class="buttons" id="button2">
+            <li class="buttons" id="button3">
+            <li class="buttons" id="button4">
+            <li class="buttons" id="button5">
+            <li class="buttons" id="button6">
+            <li class="buttons" id="button7">
+          </ul>
+        </nav>
+        <nav>
+          <a href='#' class='left hidden btn btn-default'>Previous</a>
+          <a href='#' class='right btn btn-default'>Next</a>
+        </nav>
+      </section>
     </div>
-    <!--Nav use not div use buttons for form elements-->
-    <div id='buttons'>
-      <!-- a tag not buttons -->
-      <button id='leftArrow' class='glyphicon glyphicon-arrow-left hidden'></button>
-      <button id='rightArrow' class='glyphicon glyphicon-arrow-right'></button>
-    </div>
-    <!-- classes not ids-->
-    <form id='radio'>
-      <!--nav with a tags inside-->
-      <input type='radio' class='round checked' name='slides' id='img1' value='1' checked>
-      <input type='radio' class='round' name='slides' id='img2' value='2'>
-      <input type='radio' class='round' name='slides' id='img3' value='3'>
-      <input type='radio' class='round' name='slides' id='img4' value='4'>
-      <input type='radio' class='round' name='slides' id='img5' value='5'>
-    </form>
-  </div>
-</center>
-</section>
-<script>
-$('.rightArrow').click(function(){
-  $('.active').addClass('hidden').next().removeClass('hidden');
-  $('.active').removeClass('show').next().addClass('show');
-  $('.current').removeClass('show').next().addClass('show');
-  $('.leftArrow').removeClass('hidden');
-  if($('#sliderList > li:last').hasClass('show')){
-    $('.rightArrow').addClass('hidden');
+  <script src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.backbone.js'></script>
+  <script>
+  $(".right").click(function() {
+  $(".active").addClass('hidden').next().removeClass('hidden');
+  $(".active").removeClass('active').next().addClass('active');
+  $(".current").removeClass('current').next().addClass('current');
+  $(".left").removeClass("hidden");
+  if ($("#slider > li:last").hasClass("active")) {
+    $(".right").addClass('hidden');
   }
 });
-$('.leftArrow').click(function(){
-  $('active').addClass('hidden').prev().removeClass('hidden');
-  $('.active').removeClass('show').prev().addClass('show');
-  $('.current').removeClass('show').prev().addClass('show');
-  $('.rightArrow').removeClass('hidden');
-  if($('#sliderList > li:first' ).hasClass('show')){
-    $('.leftArrow').addClass('hidden');
+
+$(".left").click(function() {
+  $(".active").addClass('hidden').prev().removeClass('hidden');
+  $(".active").removeClass('active').prev().addClass('active');
+  $(".current").removeClass('current').prev().addClass('current');
+  $(".right").removeClass("hidden");
+  if ($("#slider > li:first").hasClass("active")) {
+    $(".left").addClass('hidden');
   }
 });
-</script>
+
+$("#button1").click(function(){
+  $(".active").addClass('hidden').removeClass('active');
+  $("#slide1").removeClass('hidden').addClass('active');
+  $(".current").removeClass('current');
+  $("#button1").addClass('current');
+  $(".left").addClass('hidden');
+  $(".right").removeClass("hidden");
+});
+
+$("#button2").click(function(){
+  $(".active").addClass('hidden').removeClass('active');
+  $("#slide2").removeClass('hidden').addClass('active');
+  $(".current").removeClass('current');
+  $("#button2").addClass('current');
+  $(".left, .right").removeClass("hidden");
+});
+
+$("#button3").click(function(){
+  $(".active").addClass('hidden').removeClass('active');
+  $("#slide3").removeClass('hidden').addClass('active');
+  $(".current").removeClass('current');
+  $("#button3").addClass('current');
+  $(".left, .right").removeClass("hidden");
+});
+
+$("#button4").click(function(){
+  $(".active").addClass('hidden').removeClass('active');
+  $("#slide4").removeClass('hidden').addClass('active');
+  $(".current").removeClass('current');
+  $("#button4").addClass('current');
+  $(".left, .right").removeClass("hidden");
+});
+
+$("#button5").click(function(){
+  $(".active").addClass('hidden').removeClass('active');
+  $("#slide5").removeClass('hidden').addClass('active');
+  $(".current").removeClass('current');
+  $("#button5").addClass('current');
+  $(".left, .right").removeClass("hidden");
+});
+
+$("#button6").click(function(){
+  $(".active").addClass('hidden').removeClass('active');
+  $("#slide6").removeClass('hidden').addClass('active');
+  $(".current").removeClass('current');
+  $("#button6").addClass('current');
+  $(".left, .right").removeClass("hidden");
+});
+
+$("#button7").click(function(){
+  $(".active").addClass('hidden').removeClass('active');
+  $("#slide7").removeClass('hidden').addClass('active');
+  $(".current").removeClass('current');
+  $("#button7").addClass('current');
+  $(".left").removeClass("hidden");
+  $(".right").addClass('hidden');
+});
+  </script>
 </body>
 </html>
