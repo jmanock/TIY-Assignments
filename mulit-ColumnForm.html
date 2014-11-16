@@ -1,99 +1,88 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Responsive Multi-Column Form</title>
-  <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/bootstrap.min.css'>
+  <title>Colum Form</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css'>
   <link rel='stylesheet' href='columnForm.css'>
-<style>
-
-</style>
 </head>
 <body>
-  <div class = 'container'>
+  <div class='container'>
     <div class='main'>
-      <form class='form-inline' role='form' id='form'>
+      <form method='POST' id='jonz'>
         <div id='col1' class='col-sm-6 col-md-4'>
-           <label for='first_name'>First Name</label>
-          <input type='text' id='first_name' name='first_name' placeholder='First Name' required>
-          </input>
+          <a><label for='first_name'>First Name</label></a>
+          <input type='text' id='first_name' name='first_name' placeholder='Spider' required></input>
           <label for='last_name'>Last Name</label>
-          <input type='text' id='last_name' name='last_name' placeholder='Last Name' required>
-        </input>
-        <label for='emai'>Email Address</label>
-        <input type='email' class='form-control' id='email' name='email' placeholder='email@email.com' required>
-      </input>
-      <label for='country'> Country</label>
-      <select name='country' id='country'>
-        <option value='USA'>United States</option>
-        <option value='ussr'>Russia</option>
-        <option value='canada'>Canada</option>
-        <option value='mex'>Mexico</option>
-      </select>
-      <label for='biography'>Biography</label>
-      <input type='text' id='biography'>
-    </input>
+          <input type='text' id='last_name' name='last_name' placeholder='Man' required></input>
+          <label for='emai'>Email address</label>
+          <input type='email' id='email' name='email' placeholder='spiderman@spiderman.com' required></input>
+          <label for='country'>Country</label>
+          <select name='country' id='country'>
+            <option>Choose a Country</option>
+            <option value='United States'>United States</option>
+            <option value='England'>England</option>
+            <option value='Canada'>Canada</option>
+            <option value='Mexico'>Mexico</option>
+            <option value='Cuba'>Cuba</option>
+          </select>
+          <section class='textWrap'>
+            <label for='biography'>Biograph</label>
+            <textarea type='text' id='biography'></textarea>
+          </section>
+        </div>
+        <div id='col2' class='col-sm-6 col-md-4'>
+          <label for='phone'>Phone Number</label>
+          <input type='tel' id='phoneNum' name='phoneNum' placeholder='123-456-7890' required></input>
+          <section class='textWrap'>
+            <label for='affiliations'>Affiliations</label>
+            <textarea type='text' id='affiliations'></textarea>
+          </section>
+          <label for='occupation'>Occupation</label>
+          <select name='occupation' id='occupation'>
+            <option>Choose an Occupation</option>
+            <option value='superhero'>Super Hero</option>
+            <option value='ninja'>Ninja</option>
+            <option value='supervillian'>Super Villian</option>
+            <option value='coder'>Coder</option>
+          </select>
+          <label for='dogsname'>Biggest Secret?</label>
+          <input type='password' id='secret'></input>
+          <label for='gadget'>Favorite Gadget</label>
+          <input type='text' id='gadget' placeholder='batarang'></input>
+        </div>
+        <div id='col3' class='col-sm-12 col-md-4'>
+          <label for='talent'>Type of Talent</label>
+          <select name='talent' id='talent'>
+            <option>Choose a Talent</option>
+            <option value='juggling'>Juggling</option>
+            <option value='kazoo'>Kazoo</option>
+            <option value='unicycling'>Unicycle as Darth Vader</option>
+            <option value='impressions'>Impressions</option>
+          </select>
+          <label for='drink'>Favorite Drink</label>
+          <input type='text' id='drink' placeholder='beer'></input>
+          <label for='power'>Special Power</label>
+          <input type='text' id='power' placeholder='super detective'></input>
+          <label for='weapon'>Weapon of Choice</label>
+          <input type='text' id='weapon' placeholder='the night'></input>
+          <section class='textWrap'>
+            <label for='comments'>Comments</label>
+            <textarea type='text' id='comments'></textarea>
+          </section>
+        </div>
+        <div id='button-submit'>
+          <input class='submitBTN' type='submit' value='Send Your Shit'></input>
+        </div>
+      </form>
+    </div>
   </div>
-  <div id='col2' class='col-sm-6 col-md-4'>
-    <label for='phone'>Phone Number</label>
-    <input type='tel' id='phoneNum' name='phoneNum' placeholder='123.456.7890' required>
-  </input>
-  <label for='affiliations'>Affiliations</label>
-  <input type='text' id='affiliations'>
-</input>
-<label for='occupation'>Occupation</label>
-<select name='occupation' id='occupation'>
-<option value='programer'>Programer</option>
-<option value='cop'>Cop</option>
-<option value='fireMan'>Fire Man</option>
-</select>
-<label for='dogsname'>Favorite Movie</label>
-<input type='password' id='secret'>
-</input>
-<label for='computer'>Favorite Computer</label>
-<input type='text' id='computer' placeholder='mac'>
-</input>
-</div>
-<div id='col3' class='col-sm-12 col-md-4'>
-  <label for='talent'>Type of talent</label>
-  <select name='talent' id='talent'>
-    <option>Choose a Talent</option>
-    <option value='music'>Music</option>
-    <option value='spots'>Sports</option>
-    <option value='games'>Games</option>
-  </select>
-  <label for='soda'>Favorite Soda</label>
-  <input type='text' id='soda' placeholder='coke'>
-</input>
-<label for='power'>Special Power</label>
-<input type='text' id='power' placeholder='x-ray'>
-</input>
-<label for='weapon'>Weapon of Choice</label>
-<input type='text' id='weapon' placeholder='gun'>
-</input>
-<label for='comments'>Comments</label>
-<input type='text'id='comments'></input>
-</div>
-<div id='button-submit'>
-  <input class='submitBTN' type='submit' value='Send'>
-</input>
-</div>
-</form>
-</div>
-</div>
-<script src='http://code.jquery.com/jquery-1.11.0.min.js'></script>
-<script>
-$('#form').submit(function(event){
-  event.prevetDefault();
-  console.log($(this).serializeArray());
-});
-// Notes
-// reduce all dicts into one
-// _.reduce(function(dic, item) dict(item.name) = item.value)
-// with sum reducing numbers into one
-// field.reduce
-// inputs tabindex changes the order of tabs
-
-</script>
+  <script type='https://code.jquery.com/jquery-1.11.0.min.js'></script>
+  <script>
+  $('#jonz').submit(function(event){
+    event.preventDefault();
+    console.log($(this).serializeArray());
+  });
+  </script>
 </body>
 </html>
