@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+<head>
+  <title>Horizontal Dropdown Menu -- Responsive Edition</title>
+  <meta name='viewport' content='width=device-width, initial-scal=1'>
+  <link rel='stylesheet' href='normailize.css/normalize.css'>
+  <link rel='stylesheet' href='dropdown-menu.css'>
+</head>
+<body>
+  <ul class='menu'>
+    <li><h3>Products</h3>
+    </li><!--End Products-->
+
+    <li class='open'>
+      <h3>Downloads</h3>
+
+      <div class='submenu'>
+        <h4>Education &amp; Learning</h4>
+        <ul>
+          <li>Learn Thai</li>
+          <li>Math Genius</li>
+          <li>Chemokid</li>
+        </ul>
+
+        <h4>Professionals</h4>
+
+        <ul>
+          <li>Success 1.0</li>
+          <li>Moneymaker</li>
+        </ul>
+
+        <h4>Entertainment</h4>
+
+        <ul>
+          <li>Gadget Finder</li>
+          <li>Green Tree Express</li>
+          <li>Green Tree Pro</li>
+          <li>Holy Cannoli</li>
+          <li>Wobbler 3.0</li>
+          <li>Coolkid</li>
+        </ul>
+
+        <h4>Games</h4>
+
+        <ul>
+          <li>Catch the Buller</li>
+          <li>Snoopydoo</li>
+          <li>Fallen Angel</li>
+          <li>Sui Maker</li>
+          <li>Wave Master</li>
+          <li>Golf Pro</li>
+        </ul>
+      </div><!--.submenu-->
+    </li><!--END Downloads-->
+
+    <li><h3>Applications</h3>
+      <div class='submenu'>
+        <h4>Learn &amp; Games</h4>
+        <ul>
+          <li>Catch the Bullet</li>
+          <li>Snoopydoo</li>
+        </ul>
+
+        <h4>Utillities</h4>
+        <ul>
+          <li>Gadget Finder</li>
+          <li>Green Tree Express</li>
+          <li>Green Tree Pro</li>
+          <li>Wobble 3.0</li>
+          <li>Coolkid</li>
+        </ul>
+
+        <h4>Education</h4>
+        <ul>
+          <li>Learn Thai</li>
+          <li>Math Genius</li>
+        </ul>
+
+        <h4>Professionals</h4>
+        <ul>
+          <li>Success 1.0</li>
+          <li>Moneymaker</li>
+        </ul>
+      </div><!--END .submenu -->
+    </li><!--END Applications -->
+
+    <li><h3>Projects</h3>
+      <h4>Learning &amp; Games</h4>
+      <ul>
+        <li>Catch the Bullet</li>
+        <li>Snoopydoo</li>
+        <li>Fallen Angel</li>
+        <li>Sui Maker</li>
+        <li>Wave Master</li>
+        <li>Golf Pro</li>
+      </ul>
+
+      <h4>Ulities</h4>
+      <ul>
+        <li>Gadget Finder</li>
+        <li>Green Tree Express</li>
+      </ul>
+
+      <h4>Entertainment</h4>
+      <ul>
+        <li>Gadget Finder</li>
+        <li>Green Tree Express</li>
+        <li>Green Tree Pro</li>
+        <li>Holy Cannoli</li>
+        <li>Wobbler 3.0</li>
+        <li>CoolKid</li>
+      </ul>
+    </li><!--END Projects-->
+
+    <li><h3>Freeware</h3>
+      <div class='submenue'>
+        <h4>Utilities</h4>
+        <ul>
+          <li>Green Tree Pro</li>
+          <li>Wobler 3.0</li>
+          <li>Coolkid</li>
+        </ul>
+
+        <h4>Education</h4>
+        <ul>
+          <li>Learn Thai</li>
+          <li>Math Genius</li>
+        </ul>
+
+        <h4>Professionals</h4>
+        <ul>
+          <li>Success 1.0</li>
+          <li>MoneyMaker</li>
+        </ul>
+
+        <h4>Learning &amp; Games</h4>
+        <ul>
+          <li>Catch the Bullet</li>
+          <li>Snoopydoo</li>
+          <li>Fallen Angel</li>
+          <li>Sui Maker</li>
+          <li>Wave Master</li>
+          <li>Golf Pro</li>
+        </ul>
+      </div>
+    </li><!--END Freeware -->
+  </ul>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.backbone.js'>
+  </script>
+  <script>
+  var navItems = document.getElementsByTagName('h3');
+
+  // For each navItem in navItems
+  _.each(navItems, function(naveItem){
+    // attach the event handler
+    navItem.onclick = clickNavItem;
+  });
+
+  /**
+   * If 'this' `navItem` is 'closed', make it 'open';
+   * If 'this' `navItem` is 'open', make it 'closed'
+   * If other 'navItem' are 'open' then close them too
+   *
+   * @todo Fix this Function
+   *
+   * @param Dom Event event
+   * @param undefined
+   */
+   function clickNavItem(event){
+    // if 'this' navItem is 'closed'
+    if(isClosed(this.parentElement)){
+      makeEverythingClosed(_.pluck(navItems, 'parentElement'));
+      makeItOpen(this.parentElement);
+      // otherwise if 'this' navItem is 'open'
+    }else if(isOpen(this.parentElement)){
+      makeItClosed(this.parentElement);
+    }
+  } // END clickNavItems
+
+   /**
+    * @param HTML Element element
+    * @return Boolean if `element` is 'open'
+    */
+  function isOpen(element){
+    return (element.className=== 'open');
+  }
+
+  /**
+   * @param HTML Element element
+   * @return Boolean if 'element' is 'closed'
+   */
+  function isClosed(element){
+    // return element NOT open
+    return !isOpen(element);
+  }
+
+  function makeItOpen(element){
+    element.className = 'open';
+  }
+
+  /**
+   * @param HTML Element element
+   * @return undefined b/c it's a command
+   */
+  function makeEverythingClosed(elements){
+    return _.each(elements, makeItClosed);
+    _.each(elements, function(element){
+      makeItClosed(element.parentElement);
+    });
+    // make it closed
+  }
+  </script>
+</body>
+</html>

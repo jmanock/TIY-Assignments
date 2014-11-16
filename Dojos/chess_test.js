@@ -1,65 +1,88 @@
-// var Chess = require('./chess.js');
-// var Position = require('./chess.js');
-// var Piece = require('./chess.js');
-//
-// var assert = require('chai').assert;
-// var expect = require('chai').expect;
-// var chess = new Chess;
-//
-// it('should return "Piece Name"', function(){
-//   assert.equal(chess.Q.getName(), "Queen");
-//   assert.equal(chess.q.getName(), "Queen");
-//   assert.equal(chess.p.getName(), 'Pawn');
-//   assert.equal(chess.P.getName(), 'Pawn');
-//   assert.equal(chess.n.getName(), 'Knight');
-//   assert.equal(chess.N.getName(), 'Knight');
-// });
-//
-// it('should return "Color"', function(){
-//   assert.equal(chess.Q.getColor(), 'black');
-//   assert.equal(chess.q.getColor(), 'white');
-// });
-//
-// // it('should return "R" for "Black Rook"', function(){
-// //   assert.equal(chess.R1.toString(), 'R');
-// // });
-//
-// // it('should return "n" for "White Knight"', function(){
-// //   assert.equal(chess.n1.toString(), 'n');
-// // });
-//
-// it('chess.k.getName should equal "King"', function(){
-//   expect(chess.k.getName()).to.equal('King');
-// });
-//
-// it('should give me an "x = 0" and "y = 4" for Black Queen', function(){
-//   assert.deepEqual(chess.Q.position,[0,4]);
-// });
+var chai = require('chai'),
+assert = chai.assert,
+expect = chai.expect;
 
-var Chess = require('./chess.js').Chess;
-var assert = require('chai').assert;
-var Position = require('./chess.js').Position;
-var Piece = require('./chess.js').Piece;
+var chess = require('./chess.js');
 
-console.log('This is the result of require("./chess")', Chess);
+describe('The Chess Constructor', function(){
+  var game;
 
-describe('Piece', function(){
-  it('should have a function',function(){
-    assert.isFunction(Piece);
-  })
-});
-
-describe('Position', function(){
-  it('should have a function Position()', function(){
-    assert.isFunction(Position);
+  it('should be a function', function(){
+    expect(chess.Chess).to.be.a('function');
   });
-  it('should have an x and y coordinates,', function(){
-    assert.equal
+  beforeEach(function(){
+    game = new chess.Chess;
+  });
+  it('with an initial starting position', function(){
+    assert.equal(game.display(), [
+    "    a   b   c   d   e   f   g   h",
+    "  +---+---+---+---+---+---+---+---+",
+    "1 | r | n | b | q | k | b | n | r |",
+    "  +---+---+---+---+---+---+---+---+",
+    "2 | p | p | p | p | p | p | p | p |",
+    "  +---+---+---+---+---+---+---+---+",
+    "3 |   |   |   |   |   |   |   |   |",
+    "  +---+---+---+---+---+---+---+---+",
+    "4 |   |   |   |   |   |   |   |   |",
+    "  +---+---+---+---+---+---+---+---+",
+    "5 |   |   |   |   |   |   |   |   |",
+    "  +---+---+---+---+---+---+---+---+",
+    "6 |   |   |   |   |   |   |   |   |",
+    "  +---+---+---+---+---+---+---+---+",
+    "7 | P | P | P | P | P | P | P | P |",
+    "  +---+---+---+---+---+---+---+---+",
+    "8 | R | N | B | Q | K | B | N | R |",
+    "  +---+---+---+---+---+---+---+---+"
+    ].join("\n"));
+  });//END describe initial starting position
+  it('should have pieces on the `board`', function(){
+    var blackQRook = game.pieceAt(1,'a');
+
+    expect(blackQRook.getName()).to.equal('Rook');
+    expect(blackQRook.getColor()).to.equal('Black');
+    expect(blackQRook.position).to.deep.equal({x:1, y:'a'});
   });
 });
 
-describe('Chess,', function(){
-  it('should have a function Chess()', function(){
-    assert.isFunction(Chess);
+describe('The Piece Constructor', function(){
+  it('should be a function', function(){
+    expect(chess.Piece).to.be.a('function');
+  });
+  it('should store `name` and `color`', function(){
+    var queen = new chess.Piece('Queen', 'black');
+
+    expect(queen.getName()).to.equal('Queen');
+    expect(queen.getColor()).to.equal('black');
+
+    var king = new chess.Piece('King', 'white');
+
+    expect(king.getName()).to.equal('King');
+    expect(king.getColor()).to.equal('white');
+  });
+
+  it('should store its Position', function(){
+    var position = new chess.Position(0,0);
+
+    var rook = new chess.Piece('Rook', 'Black');
+    rook.setPosition(position);
+
+    expect(rook.position).to.equal(position);
+  });
+});
+
+describe('The Position Constructor', function(){
+  it('should be a function', function(){
+    expect(chess.Position).to.be.a('function');
+  });
+  it('should remember its {x,y} coordinates', function(){
+    var pos1 = new chess.Position(1,2);
+
+    expect(pos1.x).to.equal(1);
+    expect(pos1.y).to.equal(2);
+
+    var pos2 = new chess.Position(2,3);
+
+    expect(pos2.x).to.equal(2);
+    expect(pos2.y).to.equal(3);
   });
 });
