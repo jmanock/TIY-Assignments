@@ -1,0 +1,95 @@
+html, body{
+  font-size:14pt;
+}
+
+h1, h2, h3, h4, h5, h6{
+  margin:0;
+  padding:0;
+  color:inherit;
+}
+
+h3{
+  color:#999;
+}
+
+ul{
+  margin:0;
+  padding:0;
+  list-style-type:none;
+}
+
+li{
+  padding:.5ex 0;
+}
+
+.menu > li{
+  margin:0;
+  padding:2ex 0;
+  padding-left:3em;
+  border-bottom:2pt solid blue;
+  transition: background-color 1s cubic-bezier(0.86,0,0.07,1),
+    color 1s cubic-bezier(0.86,0,0.07,1),
+    max-height 2s linear;
+}
+
+.menu > li:after{
+  content:'';
+  display:block;
+  clear:both;
+}
+
+.menu > li .submenu{
+  max-height:0;
+  overflow:hidden;
+  transition:inherit;
+}
+
+.menu > li.open{
+  background:purple;
+  color:white;
+  transition: background-color 1s linear,
+    max-height 0.5s;
+}
+
+.menu > li.open h3{
+  color:white;
+  margin-bottom:3ex;
+  transition:inherit;
+}
+
+.menu > li.open .submenu{
+  max-height:500px;
+}
+
+.menu h4{
+  font-size:130%;
+  line-height:3ex;
+  font-weight:normal;
+  color:lightblue;
+}
+
+.menu ul{
+  margin:1ex 0;
+}
+
+@media (min-width:600px){
+  .submenu > *{
+    float:left;
+  }
+}
+
+@media (min-width:800px){
+  ul{
+    position:relative;
+  }
+  ul.menu > li{
+    float:left;
+  }
+  .submenu{
+    background-color:inherit;
+    position:absolute;
+    left:0;
+    right:0;
+    top:8ex;
+  }
+}
