@@ -2,12 +2,28 @@
 ## Function
 ---
 ### angular.module
+a global place for creating, registering, and retrieving Angular modules.
+
+ex
+`var myModule = angular.module('myModule')`
 
 ### angular.extends
+destination object dst by copying own enumerable properties for the src objects to dst
+
+ex
+`angular.exted(dst, src);`
 
 ### angular.copy
+creates a deep copy of source, which should be an object or an array
+
+ex
+`andgular.copy(source, destination);`
 
 ### angular.element
+Wraps a raw DOM element or HTML string as a jQuery element
+
+ex
+`angular.element(element);`
 
 ## Directive
 ---
@@ -59,7 +75,10 @@ ex
 `<input ng-keyup="count = count + 1>"`
 
 ### ngModel
+binds an input, selection, textarea, to a property on the scope using NgModelController
 
+ex
+`<script> <'ExampleController'> <form ng-sontroller='ExampleController'>`
 
 ### ngRepeat
 instantiates a template once per item from a collection.
