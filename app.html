@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- bower:css -->
+  <!-- endbower -->
+  <style href='base.css'></style>
+  <meta charset="UTF-8">
+  <title>TodoMVC</title>
+  <link rel='stylesheet'
+</head>
+<body ng-app='todomvc' ng-controller='Ctrl as taskList'>
+  <section id='todoapp'>
+    <header id='header'>
+      <h1>todos</h1>
+      <input id='new-todo' autofocus placeholder='What needs to be done?' ng-keyup='taskList.addTask($event, task)' ng-model='task'>
+    </header>
+    <section id='main'>
+      <input id='toggle-all' type='checkbox'>
+      <label for='toggle-all'>Mark all as complete</label>
+      <ul id='todo-list'>
+        <li class='completed'>
+          <div class='view'>
+            <input class='toggle' type='checkbox' checked>
+            <label>Create a todoMvc template</label>
+            <button class='destroy'></button>
+          </div>
+          <input class='edit' value='Create a TodoMVC template'>
+        </li>
+        <li ng-repeat='task in taskList.tasks' ng-class='{completed: task.completed, editing:task.editing}'>
+          <div class='view'>
+            <input class='toggle' type='checkbox' ng-model='task.completed'>
+            <label ng-dblclick='taskList.startEdit($event, task)'>{{task.text}}</label>
+            <button class='destroy'></button>
+          </div>
+          <form ng-submit='taskList.editTask(task,updatedText)'>
+            <input class='edit' ng-model='updatedText'>
+          </form>
+        </li>
+      </ul>
+    </section>
+    <footer id='footer'>
+      <span id='todo-count'>
+        <strong>{{taskList.completed().length}}</strong> item left
+      </span>
+      <ul id='filters'>
+        <li>
+          <a class='selected' href='#/'>All</a>
+        </li>
+        <li>
+          <a href='#/active'>Active</a>
+        </li>
+        <li>
+          <a href='#/completed'>Completed</a>
+        </li>
+      </ul>
+      <button id='clear-completed'>Clear completed (1)</button>
+    </footer>
+  </section>
+  <footer id='info'>
+    <p>Double-click to edit a todo</p>
+  </footer>
+  <!-- bower:js -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <!-- endbower -->
+  <script src='app.js'></script>
+</body>
+</html>
