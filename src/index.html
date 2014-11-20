@@ -42,7 +42,7 @@
             <button type="submit" class="btn btn-primary col-xs-2"
             >POST</button> <em> {{140 - text.length}} characters remaining</em>
           </fieldset>
-          <!-- <blockquote>
+           <blockquote>
             <p>
               {{text | limitTo:140 }}
             </p>
@@ -59,30 +59,16 @@
             {{comment.body}}
           </p>
           <cite>
-            // FIXME: ;)
+            <!--// FIXME: ;)
             <a ng-href="{{comment.user.html_url}}" rel="avatar"
-            class="thumbnail"><img ng-src="{{comment.user.avatar_url}}"></a>
+            class="thumbnail"><img ng-src="{{comment.user.avatar_url}}"></a> -->
           <a ng-href="{{comment.user.html_url}}"
           rel="author"><strong>{{comment.user.login}}</strong></a>
           on <time>{{comment.updated_at | date}}</time>
                   </cite>
                 </blockquote>
-              </section> -->
+              </section>
 
-              <section>
-                <ul>
-                  <blockquote> &mdash; {{author}}  {{post}}
-                    <p> {{text | limitTo: 140}}</p>
-                  </blockquote>
-                </ul>
-              </form>
-            </header>
-            <section>
-              <ul>
-                <blockquote ng-repeat='post in app.comments'><address></address>&mdash; {{post.user.login}} Posted {{post.updated_at | date}}
-                  <p>{{post.body | limitTo: 140}}</p>
-                </blockquote>
-              </ul>
   </div>
 
 
