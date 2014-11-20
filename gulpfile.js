@@ -1,20 +1,9 @@
-/* gulpfile with livereload */
-var gulp = require('gulp'),
-  connect = require('gulp-connect');
+'use strict';
 
-  gulp.task('connect', function(){
-    connect.server(){
-      livereload:true;
-    }
-  });
+var gulp = require('gulp');
 
-  gulp.task('html', function(){
-    gulp.src('./*.html')
-    .pipe(connect.reload());
-  });
+require('require-dir')('./gulp');
 
-  gulp.task('watch', function(){
-    gulp.watch(['./*.html'], ['html']);
-  });
-
-  gulp.task('default', ['connect', 'watch']);
+gulp.task('default', ['clean'], function () {
+    gulp.start('build');
+});
