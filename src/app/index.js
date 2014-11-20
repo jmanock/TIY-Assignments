@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('twitterComments', []);
+angular.module('twitterComments', ['ngCookies']);

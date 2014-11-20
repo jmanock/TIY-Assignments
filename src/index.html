@@ -28,25 +28,23 @@
     <![endif]-->
 
     <div class="container" ng-controller="MainCtrl as app">
-
-      <div ng-include="'components/navbar/navbar.html'"></div>
-        <header class='row'>
-          <form>
+        <header class='well row'>
+          <form ng-submit='app.addComment(text, app.apiKey)'>
             <fieldset class='form-group'>
             <label>Whats on your mind?</label>
-            <textarea ng-maxlength='140' ng-model="text" class='form-control'></textarea>
+            <textarea ng-model="text" class='form-control' required>
+            </textarea>
           </fieldset>
           <fieldset class='form-group'>
-            <input class='form-control col-xs-10' type='text' placeholder='who are you'>
-            <label></label>
-            <button type='submit' class='btn btn-primary col-xs-2' ng-click='app.addComment('text, 'apiKey)'>Post</button><em>{{text.length}} chararacters remaining</em>
+            <input type='text' ng-model='app.apiKey' required class='form-control col-xs-10' placeholder='Who are you?'>
+            <button type='submit' class='btn btn-primary col-xs-2' >Post</button><em>{{140 - text.length}} chararacters remaining</em>
           </fieldset>
           <blockquote>
-            <p>{{text | limitTo:140}}
+            <p>{{text || 'Lorem ipsum...' | limitTo:140}}
             </p>
             <cite>
-              <&dash; <strong>{{author}}</strong>
-              on <time>{{"2014-11-13 13:00:00" | date}}</time>
+              &mdash; <strong>{{author || 'Your Name'}}</strong>
+              on <time>2014-11-20</time>
             </cite>
           </blockquote>
         </form>
@@ -60,6 +58,9 @@
             <a ng-href='{{comment.user.html_url}}' rel='avatar' class='thumbnail'><img
             ng-src='{{comment.user.avatar_url}}'></a> <strong>{{comment.user.login}}</strong></a>
             on <time ng-repeat='update'>{{comment.update_at | date}}</time>
+
+            <a ng-href='{{comment.user.html_url}}' rel='author'><strong>{{comment.user.login}}</strong></a>
+            on <time>{{comment.updated_at | date}}</time>
           </cite>
         </blockquote>
       </section>
