@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Colum Form</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='columnForm.css'>
+</head>
+<body>
+  <div class='container'>
+    <div class='main'>
+      <form method='POST' id='jonz'>
+        <div id='col1' class='col-sm-6 col-md-4'>
+          <a><label for='first_name'>First Name</label></a>
+          <input type='text' id='first_name' name='first_name' placeholder='Spider' required></input>
+          <label for='last_name'>Last Name</label>
+          <input type='text' id='last_name' name='last_name' placeholder='Man' required></input>
+          <label for='emai'>Email address</label>
+          <input type='email' id='email' name='email' placeholder='spiderman@spiderman.com' required></input>
+          <label for='country'>Country</label>
+          <select name='country' id='country'>
+            <option>Choose a Country</option>
+            <option value='United States'>United States</option>
+            <option value='England'>England</option>
+            <option value='Canada'>Canada</option>
+            <option value='Mexico'>Mexico</option>
+            <option value='Cuba'>Cuba</option>
+          </select>
+          <section class='textWrap'>
+            <label for='biography'>Biograph</label>
+            <textarea type='text' id='biography'></textarea>
+          </section>
+        </div>
+        <div id='col2' class='col-sm-6 col-md-4'>
+          <label for='phone'>Phone Number</label>
+          <input type='tel' id='phoneNum' name='phoneNum' placeholder='123-456-7890' required></input>
+          <section class='textWrap'>
+            <label for='affiliations'>Affiliations</label>
+            <textarea type='text' id='affiliations'></textarea>
+          </section>
+          <label for='occupation'>Occupation</label>
+          <select name='occupation' id='occupation'>
+            <option>Choose an Occupation</option>
+            <option value='superhero'>Super Hero</option>
+            <option value='ninja'>Ninja</option>
+            <option value='supervillian'>Super Villian</option>
+            <option value='coder'>Coder</option>
+          </select>
+          <label for='dogsname'>Biggest Secret?</label>
+          <input type='password' id='secret'></input>
+          <label for='gadget'>Favorite Gadget</label>
+          <input type='text' id='gadget' placeholder='batarang'></input>
+        </div>
+        <div id='col3' class='col-sm-12 col-md-4'>
+          <label for='talent'>Type of Talent</label>
+          <select name='talent' id='talent'>
+            <option>Choose a Talent</option>
+            <option value='juggling'>Juggling</option>
+            <option value='kazoo'>Kazoo</option>
+            <option value='unicycling'>Unicycle as Darth Vader</option>
+            <option value='impressions'>Impressions</option>
+          </select>
+          <label for='drink'>Favorite Drink</label>
+          <input type='text' id='drink' placeholder='beer'></input>
+          <label for='power'>Special Power</label>
+          <input type='text' id='power' placeholder='super detective'></input>
+          <label for='weapon'>Weapon of Choice</label>
+          <input type='text' id='weapon' placeholder='the night'></input>
+          <section class='textWrap'>
+            <label for='comments'>Comments</label>
+            <textarea type='text' id='comments'></textarea>
+          </section>
+        </div>
+        <div id='button-submit'>
+          <input class='submitBTN' type='submit' value='Send Your Shit'></input>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script type='https://code.jquery.com/jquery-1.11.0.min.js'></script>
+  <script>
+  $('#jonz').submit(function(event){
+    event.preventDefault();
+    console.log($(this).serializeArray());
+  });
+  </script>
+</body>
+</html>

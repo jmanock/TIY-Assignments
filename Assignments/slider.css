@@ -1,0 +1,41 @@
+
+body{
+  margin:0;
+  padding:0;
+}
+.main{
+  width:100%;
+  padding:5% 0 5% 0;
+  position:relative;
+}
+#slider{
+  width:100%;
+  list-style-type:none;
+  clear:both;
+}
+#slider li{
+  display:inline;
+}
+#leftArrow{
+  position:absolute;
+  left:15%;
+  top:50%;
+  width:5%;
+  height:50px;
+  background-color:transparent;
+  color:gray;
+  border:0;
+  font-size:200%;
+}
+#rightArrow{
+  position:absolute;
+  right:15%;
+  top:50%;
+  width:5%;
+  height:50px;
+  background-color:transparent;
+  color:gray;
+  border:0;
+  font-size:200%;
+  padding:0;
+}

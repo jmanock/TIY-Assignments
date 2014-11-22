@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Full-Width Slider</title>
+  <link rel='stylesheet' href='bootstrap'>
+  <style>
+  .slider{
+    position:relative;
+  }
+  .slider > .buttons{
+    position:absolute;
+    z-index:1;
+    width:100%;
+    top:25%;
+  }
+  .slider > .buttons > a:first-child{
+    float:left;
+  }
+  .slider > .buttons > a:last-child{
+    float:right;
+  }
+  .slider .slides{
+    overflow:hidden;
+    white-space:nowrap;
+  }
+  .slider .slides > li{
+    display:inline-block;
+    transition:margin-left 2s ease;
+    width:100%;
+  }
+  .slider .bullets{
+    position:absolute;
+    bottom:10%;
+    top:auto;
+    width:100%;
+    font-size:300%;
+    height:25%;
+    text-align:center;
+    background-color:rgba(66,66,66,0.5);
+  }
+  .slider .slides > li.exit{
+    margin-left:-100%;
+  }
+  .slider .bullets{
+    line-height:150%;
+  }
+  .slider .bullets .active{
+    font-size:150%;
+  }
+  </style>
+</head>
+<body>
+  <div class='container-fluid'>
+    <div class='slider'>
+      <nav class='buttons'>
+        <a href='#' class='prev btn btn-default'>Previous</a>
+        <a href='#' class='next btn btn-default'>Next</a>
+      </nav>
+      <ol class='list-inline row slides'>
+        <template>
+          <li><a href='{{image.src}}' class='thumbnail'><img src='{{image.src}}'></a></li>
+        </template>
+      </ol>
+      <nav class='bullets'>
+        <template>
+          <a href="#image-{{index}}" >&bull;</a>
+        </template>
+      </nav>
+    </div> <!--.slider-->
+  </div> <!--.container-->
+
+  <script src='jquery'></script>
+  <script src='lodash'></script>
+  <script>
+  ;(function(){
+    var images =[
+    {src: 'one.jpg'},
+    {src: 'two.jpg'},
+    {src: 'three.jpg'},
+    {src: 'four.jpg'},
+    {src: 'five.jpg'},
+    {src: 'six.jpg'},
+    {src:'seven.jpg'},
+    {src: 'eight.jpg'},
+    {src:'nine.jpg'}
+    ];
+
+    _.templateSettings.interpolate = /{{[\s\S]+?}}/g;
+
+    var $slided = $('.slides'),
+    $slide = $($slides.find('template').prop('content').children),
+    slideTpl = _.template($slide.html()),
+    $buttons = $('.buttons'),
+    $bullets = $('.bullets'),
+    $bullet = $($('template', $bullets).prop('content').children);
+
+    /**
+     * Dynamically create images / bullets...
+     */
+    _.each(images, fuction(image, index){
+      $slide.clone()
+      .html(slideTpl({image:image}))
+      .data('slideIndex', index)
+      .appendTo($bullets);
+    });
+      /**
+       * @event next
+       * @element .slider
+       */
+    $('.slider').on('next', function(event){
+      var $li = $('li:not(.exit):first', $slides).trigger('exit');
+      $bullets.trigger('activate', $li.data('slideIndex')+1);
+    });
+      /**
+       * @event prev
+       * @element .slider
+       */
+    $('.slider').on('prev', function(event){
+      var $li('li.exit:last', $slides).trigger('enter');
+      $bullets.trigger('activate', $li.data('slideIndex'));
+    });
+      /*
+       * @event exit
+       * @element .slider .slides > li
+       */
+    $('.slider').on('exit', '.slides > li', function(event){
+      $(this).addClass('exit');
+      return false;
+    });
+    /**
+     * @event enter
+     * @element .slider .slides > li
+     */
+    $('.slider').on('enter', '.slides > li', function(event){
+      return false;
+    });
+    /**
+     * @event activate
+     * @element .bullets
+     */
+    $bullets.on('active', function(event,index){
+      $($(this).children()
+      .removeClass('active')
+      .get(index)).addClass('active');
+    });
+    /*
+     * @event click
+     * @element .buttons > a.next
+     */
+    $buttons.find('a.next').click(function(event){
+      $(this).trigger('next');
+      return false;
+    });
+    /*
+     * @event click
+     * @element .buttons > a.prev
+     */
+    $buttons.find('a.prev').click(function(event){
+      $(this).trigger('prev');
+      return false;
+    });
+
+  });
+</script>
+</body>
+</html>
