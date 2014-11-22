@@ -1,0 +1,101 @@
+<!doctype html>
+<html class="no-js" ng-app="tiyAssignments">
+  <head>
+    <meta charset="utf-8">
+    <title>frontend</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- build:css({.tmp,src}) styles/vendor.css -->
+    <link rel="stylesheet" href="app/vendor.css">
+
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css({.tmp,src}) styles/app.css -->
+    <link rel="stylesheet" href="app/index.css">
+    <!-- endbuild -->
+
+    <!-- build:js scripts/modernizr.js -->
+    <script src="../bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="container" ng-controller="MainCtrl as app">
+      <div class="columns profilecols js-username" data-name="al-the-x">
+        <div class="column one-fourth vcard" itemscope itemtype="http://schema.org/Person">
+
+          <a href="{{app.user.avatar_url}}" aria-hidden="true" class="vcard-avatar"
+          itemprop="image"><img alt="" class="avatar" data-user="96015" height="230"
+          src="{{app.user.avatar_url}}" width="230" /></a>
+
+          <h1 class="vcard-names">
+            <span class="vcard-fullname" itemprop="name">{{app.user.name}}</span>
+            <span class="vcard-username" itemprop="additionalName">{{app.user.login}}</span>
+          </h1>
+
+          <ul class="vcard-details">
+            <li class="vcard-detail" itemprop="worksFor">{{app.user.company}}</li>
+
+            <li class="vcard-detail" itemprop="homeLocation">{{app.user.location}}</li>
+            <li class="vcard-detail"><span class="octicon octicon-mail"></span><a class="email"
+              href="mailto:{{app.user.email}}">{{app.user.email}}</a></li>
+              <li class="vcard-detail" itemprop="url"><span class="octicon octicon-link"></span><a
+                href="{{app.user.blog}}" class="url" rel="nofollow me">{{app.user.blog}}</a></li>
+                <li class="vcard-detail"><span class="octicon octicon-clock"></span><span class="join-label">Joined on </span><time class="join-date" datetime="2009-06-16T17:54:00Z" day="numeric" is="local-time" month="short" year="numeric">Jun 16, 2009</time></li>
+              </ul>
+
+              <div class="vcard-stats">
+                <a class="vcard-stat" href="/al-the-x/followers">
+                  <strong class="vcard-stat-count">60</strong>
+                  <span class="text-muted">followers</span>
+                </a>
+                <a class="vcard-stat" href="/stars/al-the-x">
+                  <strong class="vcard-stat-count">111</strong>
+                  <span class="text-muted">Starred</span>
+                </a>
+                <a class="vcard-stat" href="/al-the-x/following">
+                  <strong class="vcard-stat-count">9</strong>
+                  <span class="text-muted">Following</span>
+                </a>
+              </div> <!-- vcard-stats -->
+
+              <div class="clearfix">
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/lodash/dist/lodash.compat.js"></script>
+    <script src="../bower_components/restangular/dist/restangular.js"></script>
+    <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,src}) scripts/app.js -->
+    <script src="app/index.js"></script>
+    <script src="app/main/main.controller.js"></script>
+    <script src="components/navbar/navbar.controller.js"></script>
+
+    <!-- inject:partials -->
+    <!-- angular templates will be automaticaly converted in js and inserted here -->
+    <!-- endinject -->
+    <!-- endbuild -->
+
+  </body>
+</html>
