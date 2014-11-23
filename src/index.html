@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" ng-app="twitter">
+<html class="no-js" ng-app="tiyAssignments">
   <head>
     <meta charset="utf-8">
     <title>frontend</title>
@@ -33,44 +33,45 @@
           <fieldset class="form-group">
             <label>What's on your mind?</label>
             <textarea class="form-control" required
-            ng-model="text" ng-maxlength="140"></textarea>
+            ng-model="text"></textarea>
           </fieldset>
-          <fieldset class="form-group">
+          <p class="input-group">
             <input type="text" ng-model="app.apiKey" required
-            class="form-control col-xs-10"
-            placeholder="Who are you?">
-            <button type="submit" class="btn btn-primary col-xs-2"
-            >POST</button> <em> {{140 - text.length}} characters remaining</em>
-          </fieldset>
-           <blockquote>
+            class="form-control" placeholder="Who are you? (gimme your API key)">
+            <span class="input-group-btn">
+              <button type="submit" class="btn btn-primary">POST</button>
+            </span>
+          </p>
+          <p class="pull-right">{{140 - text.length}} characters remaining</p>
+          <blockquote>
             <p>
-              {{text | limitTo:140 }}
+              {{text || 'Lorem ipsum...' | limitTo:140 }}
             </p>
             <cite>
               &mdash; <strong>{{author || 'Your Name'}}</strong>
               on <time>2014-11-20</time>
             </cite>
           </blockquote>
-                  </form>
-                </header>
-                <section>
-                  <blockquote ng-repeat="comment in app.comments">
+        </form>
+      </header>
+      <section>
+        <blockquote ng-repeat="comment in app.comments">
           <p>
             {{comment.body}}
           </p>
           <cite>
-            <!--// FIXME: ;)
+            <!-- // FIXME: ;)
             <a ng-href="{{comment.user.html_url}}" rel="avatar"
-            class="thumbnail"><img ng-src="{{comment.user.avatar_url}}"></a> -->
+            class="thumbnail"><img ng-src="{{comment.user.avatar_url}}"></a>
+          -->
           <a ng-href="{{comment.user.html_url}}"
           rel="author"><strong>{{comment.user.login}}</strong></a>
           on <time>{{comment.updated_at | date}}</time>
-                  </cite>
-                </blockquote>
-              </section>
+        </cite>
+      </blockquote>
+    </section>
 
-  </div>
-
+  </div> <!-- .container -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
@@ -87,6 +88,8 @@
     <script src="../bower_components/jquery/dist/jquery.js"></script>
     <script src="../bower_components/angular/angular.js"></script>
     <script src="../bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="../bower_components/lodash/dist/lodash.compat.js"></script>
+    <script src="../bower_components/restangular/dist/restangular.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('twitter')
+angular.module('tiyAssignments')
   .controller('NavbarCtrl', function ($scope) {
     $scope.date = new Date();
   });

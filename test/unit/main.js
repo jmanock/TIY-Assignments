@@ -3,7 +3,7 @@
 describe('controllers', function(){
   var scope;
 
-  beforeEach(module('twitter'));
+  beforeEach(module('tiyAssignments'));
 
   beforeEach(inject(function($rootScope) {
   	scope = $rootScope.$new();
