@@ -1,6 +1,5 @@
 'use strict';
-
-angular.module('angularizeGitHub', ['ngCookies', 'restangular', 'ngRoute'])
+ angular.module('angularizeGitHub', ['ngCookies', 'restangular', 'ngRoute'])
   // .config(function ($routeProvider) {
   //   $routeProvider
   //     .when('/', {
