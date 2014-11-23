@@ -27,52 +27,49 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="container" ng-controller="MainCtrl as app">
-      <header class="well row">
-        <form ng-submit="app.addComment(text, app.apiKey)">
-          <fieldset class="form-group">
+    <div class='container' ng-controller='MainCtrl as app'>
+      <div ng-include="components/navbar/navbar.html"></div>
+      <header class='well'>
+        <nav id='logInOut'>
+          <button ng-hide="loggedIn()" ng-click="logIn()">Login</button>
+          <button ng-show='loggedIn()' ng-click='logOut()'>Logout</button>
+          <button ng-click='test()'>User Status</button>
+        </nav>
+
+        <form ng-submit='addMessage(messageText,messageAuthor)'>
+          <fieldset class='form-group'>
             <label>What's on your mind?</label>
-            <textarea class="form-control" required
-            ng-model="text"></textarea>
+            <textarea class='form-control' required ng-model='messageText'></textarea>
+            <button type='submit' class='btn btn-primary'>Post</button>
+            <em>{{140 - messageText.length}} character remaining</em>
           </fieldset>
-          <p class="input-group">
-            <input type="text" ng-model="app.apiKey" required
-            class="form-control" placeholder="Who are you? (gimme your API key)">
-            <span class="input-group-btn">
-              <button type="submit" class="btn btn-primary">POST</button>
-            </span>
-          </p>
-          <p class="pull-right">{{140 - text.length}} characters remaining</p>
           <blockquote>
             <p>
-              {{text || 'Lorem ipsum...' | limitTo:140 }}
+              {{messageText || 'Your text shows up here!' | limitTo:140}}
             </p>
             <cite>
-              &mdash; <strong>{{author || 'Your Name'}}</strong>
-              on <time>2014-11-20</time>
+              <img class='avatar' ng-src="{{app.avatar}}">&mdash;
+              <strong>{{app.displayName || displayName || "Your Name"}}</strong>
+              on <time>{{ app.date | date: 'h:mm aEEE MMM d YYYY'}}</time>
             </cite>
           </blockquote>
         </form>
       </header>
-      <section>
-        <blockquote ng-repeat="comment in app.comments">
-          <p>
-            {{comment.body}}
-          </p>
+
+      <section class='col-md-12'>
+        <blockquote ng-repeat='message in messages'>
+          {{message.text}}
+          <button ng-click='messages.$remove(message)' class='ng-hide' ng-show='authorized()'>X</button>
+          <br><br>
           <cite>
-            <!-- // FIXME: ;)
-            <a ng-href="{{comment.user.html_url}}" rel="avatar"
-            class="thumbnail"><img ng-src="{{comment.user.avatar_url}}"></a>
-          -->
-          <a ng-href="{{comment.user.html_url}}"
-          rel="author"><strong>{{comment.user.login}}</strong></a>
-          on <time>{{comment.updated_at | date}}</time>
-        </cite>
-      </blockquote>
-    </section>
-
-  </div> <!-- .container -->
-
+            <img class='avatar' ng-src="{{message.avatar}}"><a ng-href="{{comment.user.html_url}}"
+            rel='author'>{{message.author || "No Stranger"}}</a> on <date>{{message.date | date: 'h:mm a EEE MMM d yyyy'}}</date>
+          </cite>
+          <textarea id='edit' class='form-control' ng-model='text'></textarea>
+        </blockquote>
+      </section>
+    </div>
+    
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
@@ -88,8 +85,6 @@
     <script src="../bower_components/jquery/dist/jquery.js"></script>
     <script src="../bower_components/angular/angular.js"></script>
     <script src="../bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="../bower_components/lodash/dist/lodash.compat.js"></script>
-    <script src="../bower_components/restangular/dist/restangular.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

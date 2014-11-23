@@ -6,8 +6,7 @@
     "angular": "1.2.x",
     "jquery" : "2.x.x",
     "angular-cookies" : "1.2.x",
-    "bootstrap-sass-official" : "3.2.x",
-    "restangular" : "~1.4.0"
+    "bootstrap-sass-official" : "3.2.x"
   },
   "devDependencies": {
     "angular-mocks": "1.2.x"
